@@ -111,6 +111,8 @@ URL-REGEX,^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A0
 URL-REGEX,^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(YourSystemName|icore-apps-ad),REJECT
 
 [Script]
+# > 龙湖天街
+龙湖天街 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js,type=http-response,pattern=^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mvc\-prod\/openapi\/task\/v1\/signature\/clock,script-update-interval=0
 # > 扫描全能王 pro
 全能扫描 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/Script/camscanner.js,type=http-response,pattern=https:\/\/(api|api-cs)*\.intsig\.net\/purchase\/cs\/query_property\?,script-update-interval=0
 # > 京东App 历史价格 
