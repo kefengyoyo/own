@@ -27,4 +27,4 @@
 
 
 [MITM]
-hostname = %APPEND% *.m.163.com, user-api.smzdm.com, apph5.manmanbuy.com, passport.iqiyi.com, xmc.ximalaya.com, auth.alipan.com, auth.aliyundrive.com, ccsp-egmas.sf-express.com, yunbusiness.ccb.com, ms.jr.jd.com, me-api.jd.com, youhui.95516.com, app.bilibili.com, m.bilibili.com, *.amap.com, gw2c-hw-open.longfor.com, mxsa.mxbc.net
+hostname = %APPEND% *.m.163.com, user-api.smzdm.com, apph5.manmanbuy.com, passport.iqiyi.com, xmc.ximalaya.com, auth.alipan.com, auth.aliyundrive.com, ccsp-egmas.sf-express.com, yunbusiness.ccb.com, ms.jr.jd.com, me-api.jd.com,  app.bilibili.com, m.bilibili.com, *.amap.com, gw2c-hw-open.longfor.com, mxsa.mxbc.net
