@@ -22,7 +22,11 @@
 银联获取 = type=http-response,pattern=^https:\/\/youhui.95516.com\/newsign\/api\/sharing_power\/showUserTask,requires-body=1,script-path=https://raw.githubusercontent.com/githubdulong/Scripts/main/Script/ysf.js
 # > 哔哩哔哩 app获取+web
 哔站获取 = type=http-request,pattern=^https?:\/\/(app\.bilibili\.com\/x\/resource\/domain\?|m.bilibili.com\/$),requires-body=0,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js
+# > 龙湖天街
+龙湖天街 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js,type=http-response,pattern=^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mvc\-prod\/openapi\/task\/v1\/signature\/clock,script-update-interval=0
+# > 蜜雪冰城
+蜜雪冰城 = requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js,type=http-response,pattern=^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info,script-update-interval=0
 
 
 [MITM]
-hostname = %APPEND% *.m.163.com, user-api.smzdm.com, apph5.manmanbuy.com, passport.iqiyi.com, xmc.ximalaya.com, auth.alipan.com, auth.aliyundrive.com, ccsp-egmas.sf-express.com, yunbusiness.ccb.com, ms.jr.jd.com, me-api.jd.com, youhui.95516.com, app.bilibili.com, m.bilibili.com, *.amap.com
+hostname = %APPEND% *.m.163.com, user-api.smzdm.com, apph5.manmanbuy.com, passport.iqiyi.com, xmc.ximalaya.com, auth.alipan.com, auth.aliyundrive.com, ccsp-egmas.sf-express.com, yunbusiness.ccb.com, ms.jr.jd.com, me-api.jd.com, youhui.95516.com, app.bilibili.com, m.bilibili.com, *.amap.com, gw2c-hw-open.longfor.com, mxsa.mxbc.net
