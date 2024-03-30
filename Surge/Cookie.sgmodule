@@ -19,7 +19,8 @@
 # > 京东CK Web获取
 京东商城 = type=http-request,requires-body=1,pattern=^https:\/\/(api\.m|me-api|ms\.jr)\.jd\.com\/(client\.action\?functionId=signBean|user_new\/info\/GetJDUserInfoUnion\?|gw\/generic\/hy\/h5\/m\/appSign\?),script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
 # > 哔哩哔哩 app获取+web
-哔站获取 = type=http-request,pattern=^https?:\/\/(app\.bilibili\.com\/x\/resource\/domain\?|m.bilibili.com\/$),requires-body=0,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js
+B站Cookie(APP) = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
+B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
 # > 龙湖天街
 龙湖天街 = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js,type=http-response,pattern=^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mvc\-prod\/openapi\/task\/v1\/signature\/clock,script-update-interval=0
 # > 蜜雪冰城
