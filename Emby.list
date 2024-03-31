@@ -86,6 +86,8 @@ DOMAIN-SUFFIX,789.123456.al
 DOMAIN-SUFFIX,stream4.misakaf.org
 
 # 流媒体GuGu服务器
+DOMAIN-SUFFIX,main.gugumedia.link
+DOMAIN-SUFFIX,pro.gugumedia.link
 DOMAIN-SUFFIX,front.gugumedia.link
 
 # 流媒体星光璀璨服务器
