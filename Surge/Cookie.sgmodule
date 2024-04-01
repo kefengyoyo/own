@@ -7,7 +7,7 @@
 # > 什么值得买 app获取
 什么值买 = type=http-request,pattern=^https?:\/\/user-api\.smzdm\.com\/checkin$,requires-body=false,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js
 # > 高德打车 微信小程序获取
-高德打车 = type=http-response, pattern=^https:\/\/m5(-zb)?\.amap\.com\/ws\/yuece\/(act|openapi)\/(activity\/current\/)?query,requires-body=1,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js
+高德打车 = type=http-response,pattern=^https:\/\/m5(-zb)?\.amap\.com\/ws\/yuece\/(act|openapi)\/(activity\/current\/)?query,requires-body=1,script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js,max-size=0,binary-body-mode=0,script-update-interval=0
 # > 慢慢买 app获取
 慢买获取 = type=http-request,pattern=^https?:\/\/apph5\.manmanbuy\.com\/taolijin\/(login.aspx|logserver.aspx),requires-body=true,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanbuy_checkin.js
 # > 阿里云盘 app获取
