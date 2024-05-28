@@ -69,7 +69,8 @@ DOMAIN-SUFFIX,bdd.topemby.com
 
 # 流媒体垃圾影音服务器
 DOMAIN-SUFFIX,cf.xmsl.org
-DOMAIN-SUFFIX,loseremby.org
+DOMAIN-SUFFIX,cf.emby.moe
+DOMAIN-SUFFIX,free.xmsl.org
 
 # 流媒体纸片人服务器
 DOMAIN-SUFFIX,embyplus.org
