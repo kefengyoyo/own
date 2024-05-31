@@ -14,7 +14,7 @@ http-request ^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone script-path=h
 http-request ^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mvc\-prod\/openapi\/task\/v1\/signature\/clock script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=60, tag=龙湖天街获取Cookie
 
 http-response ^https?:\/\/www\.wandawic\.com\/api\/foreground\/loginregister\/queryUser tag=万达智慧商业²,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js,requires-body=1
-# 天翼网盘cookie
+
 http-response ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60, tag=蜜雪冰城获取token
 
 http-request ^https?:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/ script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, tag=喜马拉雅Cookie
@@ -22,5 +22,5 @@ http-request ^https?:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/ script-
 http-response ^https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=) script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, requires-body=true, timeout=60, tag=高德打车cookie
 
 http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,tag=什么值得买_获取cookie
-
+# 天翼网盘cookie
 http-request ^https:\/\/api\.cloud\.189\.cn\/mkt\/userSign\.action? script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.cookie.js, timeout=60, tag=天翼网盘cookie
