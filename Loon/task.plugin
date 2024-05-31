@@ -1,26 +1,30 @@
-#!name=签到重写
+#!name=每日签到
 #!desc=每日签到
 
-[Mitm]
-hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,game.dominos.com.cn,gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,user-api.smzdm.com,api.cloud.189.cn
-
 [Script]
-http-response ^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, tag=奶茶获取token
+# 奶茶合集
+cron "0 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, timeout=10, tag=奶茶多合一签到🎉, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/teaMilk.png
+# 达美乐披萨
+cron "31 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, timeout=10, tag=达美乐披萨, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Dlm.png
+# 龙湖天街
+cron "05 9 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=60, tag=龙湖天街, img-url=https://raw.githubusercontent.com/leiyiyan/resource/main/icons/lhtj.png
+# 万达智慧商业²
+cron "03 9 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js, timeout=60, tag=万达智慧商业², img-url=https://raw.githubusercontent.com/leiyiyan/resource/main/icons/wdzhsy.png
+# 蜜雪冰城
+cron "2 9 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, timeout=10, tag=蜜雪冰城获取, img-url=https://raw.githubusercontent.com/sliverkiss/QuantumultX/main/icon/mxbc.png
+# 喜马拉雅
+cron "59 8 * * *" script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, timeout=10, tag=喜马拉雅,img-url=https://raw.githubusercontent.com/HuiDoY/Icon/main/mini/Color/ximalaya.png
+# 高德打车
+cron "6 9 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=10, tag=高德打车, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Gddt.png
+# 什么值得买
+cron "1 9 * * *" script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js, timeout=10, tag=什么值得买, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Smzdm.png
+# 天翼网盘
+cron "30 8 * * *" script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.js, timeout=10, tag=天翼网盘, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Tyyp.png
+# 每日摸鱼
+cron "0 8 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/moyu.js, timeout=20, tag=摸鱼来啦, img-url=https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/67/04/ff/6704ff4c-b49b-de91-70ac-201c62d5296f/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/144x144bb.png
+# boxjs备份
+cron "50 23 * * *" script-path=https://raw.githubusercontent.com/dompling/Script/master/gist/backup.js, timeout=10, tag=boxjs备份, img-url=shippingbox
+# 汇率监控
+cron "10 9 * * ?" script-path=https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js, timeout=10, tag=汇率监控, img-url=https://raw.githubusercontent.com/chxm1023/Task/main/icon/hljk.png
 
-http-request ^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, tag=奶茶获取token
 
-http-request ^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, requires-body=true, timeout=10, tag=达美乐披萨获取token
-
-http-request ^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mvc\-prod\/openapi\/task\/v1\/signature\/clock script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=60, tag=龙湖天街获取Cookie
-
-http-response ^https?:\/\/www\.wandawic\.com\/api\/foreground\/loginregister\/queryUser tag=万达智慧商业²,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js,requires-body=1
-
-http-response ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60, tag=蜜雪冰城获取token
-
-http-request ^https?:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/ script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, tag=喜马拉雅Cookie
-
-http-response ^https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=) script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, requires-body=true, timeout=60, tag=高德打车cookie
-
-http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,tag=什么值得买_获取cookie
-# 天翼网盘cookie
-http-request ^https:\/\/api\.cloud\.189\.cn\/mkt\/userSign\.action? script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.cookie.js, timeout=60, tag=天翼网盘cookie
