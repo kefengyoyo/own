@@ -2,7 +2,7 @@
 #!desc=每日签到
 
 [Mitm]
-hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,game.dominos.com.cn,gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,user-api.smzdm.com,api.cloud.189.cn
+hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,game.dominos.com.cn,gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,user-api.smzdm.com,api.cloud.189.cn,mobile.ximalaya.com,coral2.quark.cn,drive-pc.quark.cn
 
 [Script]
 # 奶茶合集
@@ -17,10 +17,15 @@ http-response ^https?:\/\/www\.wandawic\.com\/api\/foreground\/loginregister\/qu
 # 蜜雪冰城
 http-response ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60, tag=蜜雪冰城获取token
 # 喜马拉雅
-http-request ^https?:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/ script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, tag=喜马拉雅Cookie
+http-request ^https?:\/\/mobile\.ximalaya\.com\/app-skin-service\/skin\/ script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js, tag=喜马拉雅Cookie
 # 高德打车
 http-response ^https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=) script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, requires-body=true, timeout=60, tag=ampDache
 # 什么值得买
 http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,tag=什么值得买_获取cookie
-# 天翼网盘cookie
+# 天翼网盘
 http-request ^https:\/\/api\.cloud\.189\.cn\/mkt\/userSign\.action? script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.cookie.js, timeout=60, tag=天翼网盘cookie
+# 夸克网盘
+http-response ^https:\/\/drive-pc\.quark\.cn\/1\/clouddrive\/file\/sort script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, tag=夸克网盘获取token
+http-response ^https:\/\/coral2\.quark\.cn\/task\/trigger script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, tag=夸克网盘福利日常收录任务
+http-request ^https:\/\/coral2\.quark\.cn\/quark\/(carbon|welfare)\/(v1|v2)\/signIn script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, tag=夸克网盘空间签到收录任务
+http-request ^https:\/\/coral2\.quark\.cn\/quark\/welfare\/v2\/sleep\/trigger script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, tag=夸克网盘睡眠打卡收录任务
