@@ -28,5 +28,7 @@ cron "50 23 * * *" script-path=https://raw.githubusercontent.com/dompling/Script
 cron "10 9 * * ?" script-path=https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js, timeout=10, tag=汇率监控, img-url=https://raw.githubusercontent.com/chxm1023/Task/main/icon/hljk.png
 # 夸克网盘
 cron "55 7 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, timeout=10, tag=夸克网盘签到, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Quark.png
+# 美团
+cron "0 0 12 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js, timeout=120,tag=美团签到
 
 
