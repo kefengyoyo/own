@@ -1,0 +1,11 @@
+#!name=软件破解
+#!desc=软件破解
+
+[Mitm]
+hostname = api.sortedapp.com,*.camscanner.com, *.intsig.net
+
+[Script]
+# Sorteds - 日历+解锁订阅
+http-response ^https:\/\/api\.sortedapp\.com\/receipts\/verify script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Sorted.js, requires-body=true, timeout=60, tag=Sorted
+# 扫描全能王 解锁黄金会员
+http-response ^https:\/\/.*\.(intsig\.net|camscanner\.com) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js, requires-body=true, timeout=60, tag=CamScanner
