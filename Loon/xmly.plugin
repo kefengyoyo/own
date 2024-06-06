@@ -1,0 +1,41 @@
+#!name=xmly去广告
+#!desc=xmly
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1016.png
+
+[Rewrite]
+https?:\/\/xdcs-collector(hera)?\.ximalaya\.com\/(api|nyx)\/v1 - reject
+https?:\/\/.*\.ximalaya\.com\/mobile-playpage\/view\/ - reject
+https?:\/\/.*\.ximalaya\.com\/chaos-notice-web\/v1\/message\/preview\/list - reject
+https?:\/\/.*\.ximalaya\.com\/social-web\/bottomtabs\/dynamicentrance\/status - reject
+https?:\/\/.*\.xmcdn\.com\/\w{8}\/\w{4}-\w{16}\/.+gif$ - reject
+https?:\/\/.*\.ximalaya\.com\/(dog-portal\/checkold|(child-mobile\/child|aged-mobile\/aged)\/mode\/query) - reject
+https?:\/\/.*\.ximalaya\.com\/discovery-feed\/isshowusergiftpendant - reject
+https?:\/\/.*\.ximalaya\.com\/mobile-user\/unread - reject
+https?:\/\/.*\.ximalaya\.com\/mobile-user\/minorprotection\/pop - reject
+https?:\/\/.*\.ximalaya\.com\/collector\/xl\/v\d - reject
+https?:\/\/.*\.ximalaya\.com\/butler-portal\/versioncheck - reject
+https?:\/\/(adse\.wsa|adse|adbehavior)\.ximalaya\.com\/.* - reject
+https?:\/\/.*\.ximalaya\.com\/mobile\/discovery\/v\d\/location - reject
+https?:\/\/.*\.ximalaya\.com\/api\/v\d\/adrealtime - reject
+https?:\/\/.*\.ximalaya\.com\/ting\/(loading|feed|home)? - reject
+https?:\/\/.*\.ximalaya\.com\/discovery-feed\/focus\/queryf - reject
+https?:\/\.*linkeye-cloud\/checkip - reject
+https?:\/\/www\.taobao\.com\/help\/getip\.php - reject
+https?:\/\.*audid-api\.taobao\.com - reject
+https?:\/\/passport(ws)?\.ximalaya\.com\/user-http-app\/v1\/token\/refresh - reject
+
+[Script]
+http-response https?:\/\/(mobile(hera)?|m(ob)?wsa|m)\.ximalaya\.com\/mobile(-user\/v\d\/homePage|-playpage\/(track\/v\d\/baseInfo|playpage\/(tabs\/v\d|recommend(\/resource\/allocation|ContentV\d)))|\/(album\/paid\/info|playlist\/album\/new)|\/v\d\/album\/track) script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/XMLY/xmly.js, requires-body=true, timeout=60, tag=xmly
+
+http-response https?:\/\/(mobile(hera)?|m(ob)?wsa|m)\.ximalaya\.com\/business-vip-(presale-mobile-web\/page|level-h5-web\/api\/(gift\/detail|profile)|welfare-mobile-web\/welfare\/module\/exclusive\/list) script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/XMLY/xmly.js, requires-body=true, timeout=60, tag=xmly
+
+http-response https?:\/\/(mobile(hera)?|m(ob)?wsa|m)\.ximalaya\.com\/discovery-(category\/customCategories|feed\/v\d\/(freeListenTab\/queryCardList|mix)|ranking-web\/v\d\/ranking\/concreteRankList) script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/XMLY/xmly.js, requires-body=true, timeout=60, tag=xmly
+
+http-response https?:\/\/(mobile(hera)?|m(ob)?wsa|m)\.ximalaya\.com\/(browsing-history-business\/browsing\/history\/query|focus-mobile\/focusPic\/info|nyx\/history\/query\/(detail|id\/list)|product\/detail\/v\d\/basicInfo\/dynamic|subscribe\/v\d\/subscribe\/comprehensive\/rank|vip\/(feed\/v1\/mix|v\d\/recommand)) script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/XMLY/xmly.js, requires-body=true, timeout=60, tag=xmly
+
+http-response https?:\/\/search(wsa)?\.ximalaya\.com\/(hub\/)?(guideWordV\d|hotWord(V\d|Billboard\/card)) script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/XMLY/xmly.js, requires-body=true, timeout=60, tag=xmly
+
+http-request https?:\/\/(mobile(hera)?|m(ob)?wsa)\.ximalaya\.com\/(mobile-playpage\/track|mobile\/quickplay) script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/XMLY/xmly_ck.js, timeout=60, tag=xmly_ck
+
+[MITM]
+hostname = *.ximalaya.com, 47.100.227.85, 61.164.145.12, 61.172.194.185, 61.172.194.186, 106.41.204.126, 112.80.180.72, 112.98.170.228, 112.99.146.108, 114.80.99.*, 118.25.119.177, 180.153.140.*, 180.153.250.*, 180.153.255.*
