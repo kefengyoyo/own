@@ -1,6 +1,5 @@
 #!name=xmly去广告
 #!desc=xmly
-#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1016.png
 
 [Rewrite]
 https?:\/\/xdcs-collector(hera)?\.ximalaya\.com\/(api|nyx)\/v1 - reject
