@@ -29,7 +29,7 @@
 
 // env.js 全局
 const $ = new Env("海底捞");
-const ckName = "TOKEN_APP_aa90e367-c881-4c2e-8ab7-95d9d23bdf55";
+const ckName = TOKEN_APP_aa90e367-c881-4c2e-8ab7-95d9d23bdf55;
 //-------------------- 一般不动变量区域 -------------------------------------
 const Notify = 1;//0为关闭通知,1为打开通知,默认为1
 const notify = $.isNode() ? require('./sendNotify') : '';
