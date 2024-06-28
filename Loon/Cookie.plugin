@@ -2,7 +2,7 @@
 #!desc=每日签到
 
 [Mitm]
-hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,game.dominos.com.cn,gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,user-api.smzdm.com,api.cloud.189.cn,mobile.ximalaya.com,coral2.quark.cn,drive-pc.quark.cn,pos.meituan.com
+hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,game.dominos.com.cn,gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,user-api.smzdm.com,api.cloud.189.cn,mobile.ximalaya.com,coral2.quark.cn,drive-pc.quark.cn,pos.meituan.com,mcs-mimp-web.sf-express.com
 
 [Script]
 # 奶茶合集
