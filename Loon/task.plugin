@@ -5,7 +5,7 @@
 # 奶茶合集
 cron "0 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, timeout=10, tag=奶茶多合一签到🎉, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/teaMilk.png
 # 达美乐披萨
-cron "30 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, timeout=10, tag=达美乐披萨, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Dlm.png
+cron "31 10 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, timeout=10, tag=达美乐披萨, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Dlm.png
 # 龙湖天街
 cron "05 9 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=60, tag=龙湖天街, img-url=https://raw.githubusercontent.com/leiyiyan/resource/main/icons/lhtj.png
 # 万达智慧商业²
