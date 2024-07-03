@@ -118,8 +118,7 @@ DOMAIN-SUFFIX,emby.aca.best
 DOMAIN-SUFFIX,misakaf.org
 
 # 流媒体江湖服务器
-DOMAIN-SUFFIX,go.reddust.link
-DOMAIN-SUFFIX,film.reddust.link
+DOMAIN-SUFFIX,reddust.link
 
 # singularity
 DOMAIN-SUFFIX,singularity.bagpipe.moe
