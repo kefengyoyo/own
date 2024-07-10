@@ -29,4 +29,6 @@ cron "10 9 * * ?" script-path=https://raw.githubusercontent.com/chxm1023/Task/ma
 # 夸克网盘
 cron "55 7 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, timeout=10, tag=夸克网盘签到, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Quark.png
 # 顺丰速运
-cron "55 9 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/1fb1cf9cd7486d30752b1ba29b871e37/raw/sfsy.js, timeout=10, tag=顺丰速运签到, img-url=https://raw.githubusercontent.com/Xhy333/QuantumultX/main/icon/Sfsy-1.png
+cron "55 9 * * *"   script-path=https://gist.githubusercontent.com/Sliverkiss/1fb1cf9cd7486d30752b1ba29b871e37/raw/sfsy.js, timeout=10, tag=顺丰速运签到, img-url=https://raw.githubusercontent.com/Xhy333/QuantumultX/main/icon/Sfsy-1.png
+# 每天60s读懂世界
+cron "35 9 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, timeout=10, tag=每天60s读懂世界, img-url=https://raw.githubusercontent.com/Yuheng0101/X/main/Assets/60s.png
