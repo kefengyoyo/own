@@ -106,9 +106,6 @@ DOMAIN-SUFFIX,20120714.xyz
 # 流媒体Temby服务器
 DOMAIN-SUFFIX,temby.285286.xyz
 
-# 流媒体infinityfly服务器
-DOMAIN-SUFFIX,nc1.infinityfly.top
-
 # 流媒体Kentucky Fried Chicken服务器
 DOMAIN-SUFFIX,ntrrr.am.sb
 DOMAIN-SUFFIX,stream.ntrrr.top
@@ -118,9 +115,6 @@ DOMAIN-SUFFIX,porn.aca.best
 DOMAIN-SUFFIX,emby.aca.best
 DOMAIN-SUFFIX,misakaf.org
 
-# 流媒体江湖服务器
-DOMAIN-SUFFIX,reddust.link
-
 # singularity
 DOMAIN-SUFFIX,singularity.bagpipe.moe
 
@@ -128,7 +122,8 @@ DOMAIN-SUFFIX,singularity.bagpipe.moe
 DOMAIN-SUFFIX,lyrebirdemby.com
 
 # 野兽
-DOMAIN-SUFFIX,emby-us-v4.mius.uk
+DOMAIN-SUFFIX,emby-micax-ca-v2.mius.uk
+DOMAIN-SUFFIX,emby-mica-us-v1.mius.uk
 
 # 飞越彩虹
 DOMAIN-SUFFIX,7777777.buzz
