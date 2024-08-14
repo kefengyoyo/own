@@ -17,7 +17,7 @@ cron "59 8 * * *" script-path=https://raw.githubusercontent.com/ClydeTime/Surge/
 # 高德打车
 cron "6 9 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=10, tag=高德打车, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Gddt.png
 # 什么值得买
-cron "1 9 * * *" script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js, timeout=10, tag=什么值得买, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Smzdm.png
+cron "35 9 * * *" script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js, timeout=10, tag=什么值得买, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Smzdm.png
 # 天翼网盘
 cron "30 8 * * *" script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.js, timeout=10, tag=天翼网盘, img-url=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/Tyyp.png
 # 每日摸鱼
