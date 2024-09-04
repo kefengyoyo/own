@@ -10,6 +10,6 @@ http-response ^https:\/\/api\.sortedapp\.com\/receipts\/verify script-path=https
 # 扫描全能王 解锁黄金会员
 http-response ^https:\/\/.*\.(intsig\.net|camscanner\.com) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/CamScanner.js, requires-body=true, timeout=60, tag=CamScanner
 # Listenify
-http-request https:\/\/api\.lrc\.cx\/(lyrics|cover) script-path=https://raw.githubusercontent.com/Yswag/for-own-use/main/js/listenify.js, tag=listenify
+# http-request https:\/\/api\.lrc\.cx\/(lyrics|cover) script-path=https://raw.githubusercontent.com/Yswag/for-own-use/main/js/listenify.js, tag=listenify
 # Spark
 # http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\w{14})$ script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/SparkMailProCrack.js, requires-body=true, timeout=60, tag=SparkMailProCrack
