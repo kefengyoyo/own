@@ -41,6 +41,9 @@ IP-CIDR,193.123.252.106/32
 # 流媒体MJJ服务器
 DOMAIN-SUFFIX,mjjemby.org
 
+# AWA影视
+DOMAIN-SUFFIX,tv.811861.xyz
+
 # 流媒体不给看服务器
 DOMAIN-SUFFIX,c.emby.pro
 DOMAIN-SUFFIX,bgka.me
