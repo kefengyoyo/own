@@ -1,1 +1,59 @@
+#!name = Task
+#!desc = 定时任务
+#!author = Sliverkiss [https://github.com/Sliverkiss]
+#!homePage = https://t.me/sliverkiss_blog
+#!data = 2024-09-14
+#!icon = https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png
+#!system = iOS,iPadOS
+#!loon_version = 3.2.3(753)
 
+[Argument]
+arg1 = input,"00 10 * * *",tag=奶茶多合一任务时间
+arg2 = switch,true,tag=奶茶多合一任务开关
+arg3 = input,"31 10 * * *",tag=达美乐披萨任务时间
+arg4 = switch,true,tag=达美乐披萨任务开关
+arg5 = input,"05 9 * * *",tag=龙湖天街任务时间
+arg6 = switch,true,tag=龙湖天街任务开关
+arg7 = input,"03 9 * * *",tag=万达智慧任务时间
+arg8 = switch,true,tag=万达智慧任务开关
+arg9 = input,"02 9 * * *",tag=蜜雪冰城任务时间
+arg10 = switch,true,tag=蜜雪冰城任务开关
+arg11 = input,"59 8 * * *",tag=喜马拉雅任务时间
+arg12 = switch,true,tag=喜马拉雅任务开关
+arg13 = input,"06 9 * * *",tag=高德打车任务时间
+arg14 = switch,true,tag=高德打车任务开关
+arg15 = input,"30 8 * * *",tag=天翼网盘任务时间
+arg16 = switch,true,tag=天翼网盘任务开关
+arg17 = input,"55 7 * * *",tag=每日摸鱼任务时间
+arg18 = switch,true,tag=每日摸鱼任务开关
+arg19 = input,"55 23 * * *",tag=boxjs备份任务时间
+arg20 = switch,true,tag=boxjs备份任务开关
+arg21 = input,"10 8 * * ?",tag=汇率监控任务时间
+arg22 = switch,true,tag=汇率监控任务开关
+arg23 = input,"55 7 * * *",tag=夸克网盘任务时间
+arg24 = switch,true,tag=夸克网盘任务开关
+arg25 = input,"55 9 * * *",tag=顺丰速运任务时间
+arg26 = switch,true,tag=顺丰速运任务开关
+arg27 = input,"15 9 * * *",tag=读懂世界任务时间
+arg28 = switch,true,tag=读懂世界任务开关
+arg29 = input,"25 9 * * *",tag=什么值得买任务时间
+arg30 = switch,true,tag=什么值得买任务开关
+
+[Script]
+cron {arg1} script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, enable= {arg2}, tag=奶茶多合一
+cron {arg3} script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js,timeout=300, enable= {arg4}, tag=达美乐披萨
+cron {arg5} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=300, enable= {arg6}, tag=龙湖天街
+cron {arg7} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js, timeout=300, enable= {arg8},tag=万达智慧
+cron {arg9} script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, timeout=300, enable= {arg10},tag=蜜雪冰城
+cron {arg11} script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, timeout=300, enable= {arg12}, tag=喜马拉雅
+cron {arg13} script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120, enable= {arg14}, tag=高德打车
+cron {arg15} script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.js, timeout=300, enable= {arg16}, tag=天翼网盘
+cron {arg17} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/moyu.js, timeout=300, enable= {arg18}, tag=每日摸鱼
+cron {arg19} script-path=https://raw.githubusercontent.com/dompling/Script/master/gist/backup.js, timeout=300, enable= {arg20}, tag=boxjs备份
+cron {arg21} script-path=https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js, timeout=300, enable= {arg22}, tag=汇率监控
+cron {arg23} script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.j, timeout=300, enable= {arg24}, tag=夸克网盘
+cron {arg25} script-path=https://raw.githubusercontent.com/kefengyoyo/own/main/sfsy.js, timeout=300, enable= {arg26}, tag=顺丰速运
+cron {arg27} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, timeout=300, enable={arg28}, tag=读懂世界
+cron {arg29} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,timeout=300, enable= {arg30}, tag=什么值得买
+
+[MITM]
