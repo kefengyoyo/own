@@ -29,12 +29,12 @@
 
 // env.js 全局
 const $ = new Env("海底捞");
-const ckName = "_haidilao_app_token: TOKEN_APP_aa90e367-c881-4c2e-8ab7-95d9d23bdf55";
+const ckName = "_haidilao_app_token: 你的token";
 //-------------------- 一般不动变量区域 -------------------------------------
 const Notify = 1;//0为关闭通知,1为打开通知,默认为1
 const notify = $.isNode() ? require('./sendNotify') : '';
 let envSplitor = ["@"]; //多账号分隔符
-let userCookie = ($.isNode() ? process.env[ckName] : $.getdata(ckName)) || 'TOKEN_APP_aa90e367-c881-4c2e-8ab7-95d9d23bdf55';
+let userCookie = ($.isNode() ? process.env[ckName] : $.getdata(ckName)) || '你的token';
 let userList = [];
 let userIdx = 0;
 let userCount = 0;
