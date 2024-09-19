@@ -29,12 +29,12 @@
 
 // env.js 全局
 const $ = new Env("海底捞");
-const ckName = "TOKEN_APP_aa90e367-c881-4c2e-8ab7-95d9d23bdf55";
+const ckName = "_haidilao_app_token: TOKEN_APP_aa90e367-c881-4c2e-8ab7-95d9d23bdf55";
 //-------------------- 一般不动变量区域 -------------------------------------
 const Notify = 1;//0为关闭通知,1为打开通知,默认为1
 const notify = $.isNode() ? require('./sendNotify') : '';
 let envSplitor = ["@"]; //多账号分隔符
-let userCookie = ($.isNode() ? process.env[ckName] : $.getdata(ckName)) || '';
+let userCookie = ($.isNode() ? process.env[ckName] : $.getdata(ckName)) || 'TOKEN_APP_aa90e367-c881-4c2e-8ab7-95d9d23bdf55';
 let userList = [];
 let userIdx = 0;
 let userCount = 0;
@@ -97,7 +97,7 @@ class UserInfo {
                     'sec-fetch-site': 'same-origin',
                     'sec-fetch-mode': 'cors',
                     'sec-fetch-dest': 'empty',
-                    'referer': 'https://superapp-public.kiwa-tech.com/app-sign-in/?SignInToken=TOKEN_APP_43d25436-b429-4233-b8b2-1154d2f20cb1&source=MiniApp',
+                    'referer': 'https://superapp-public.kiwa-tech.com/app-sign-in/?SignInToken=TOKEN_APP_aa90e367-c881-4c2e-8ab7-95d9d23bdf55&source=MiniApp',
                 },
                 body: ''
             }
