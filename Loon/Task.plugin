@@ -38,6 +38,8 @@ arg27 = input,"15 9 * * *",tag=读懂世界任务时间
 arg28 = switch,true,tag=读懂世界任务开关
 arg29 = input,"25 9 * * *",tag=什么值得买任务时间
 arg30 = switch,true,tag=什么值得买任务开关
+arg31 = input,"30 7 * * *",tag=Bilibili任务时间
+arg32 = switch,true,tag=Bilibili任务开关
 
 [Script]
 cron {arg1} script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, enable= {arg2}, tag=奶茶多合一
@@ -55,5 +57,5 @@ cron {arg23} script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e6
 cron {arg25} script-path=https://raw.githubusercontent.com/kefengyoyo/own/main/sfsy.js, timeout=300, enable= {arg26}, tag=顺丰速运
 cron {arg27} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, timeout=300, enable={arg28}, tag=读懂世界
 cron {arg29} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,timeout=300, enable= {arg30}, tag=什么值得买
-
+cron {arg31} script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/refs/heads/main/js/BiliBiliDailyBonus.js,timeout=300, enable= {arg32}, tag=Bilibili
 [MITM]
