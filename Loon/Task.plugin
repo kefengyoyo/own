@@ -53,7 +53,7 @@ cron {arg15} script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX
 cron {arg17} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/moyu.js, timeout=300, enable= {arg18}, tag=每日摸鱼
 cron {arg19} script-path=https://raw.githubusercontent.com/dompling/Script/master/gist/backup.js, timeout=300, enable= {arg20}, tag=boxjs备份
 cron {arg21} script-path=https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js, timeout=300, enable= {arg22}, tag=汇率监控
-cron {arg23} script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.j, timeout=300, enable= {arg24}, tag=夸克网盘
+cron {arg23} script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, timeout=300, enable= {arg24}, tag=夸克网盘
 cron {arg25} script-path=https://raw.githubusercontent.com/kefengyoyo/own/main/sfsy.js, timeout=300, enable= {arg26}, tag=顺丰速运
 cron {arg27} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, timeout=300, enable={arg28}, tag=读懂世界
 cron {arg29} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,timeout=300, enable= {arg30}, tag=什么值得买
