@@ -20,7 +20,7 @@ arg9 = switch,true,tag=什么值得买获取token
 arg10 = switch,true,tag=天翼网盘获取token
 arg11 = switch,true,tag=顺丰速运获取token
 arg12 = switch,true,tag=Bilibili获取token
-arg13 = switch,true,tag=Bilibili获取token
+arg13 = switch,true,tag=美团获取token
 
 [Script]
 http-response ^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, enable = {arg1}, tag=奶茶获取token
