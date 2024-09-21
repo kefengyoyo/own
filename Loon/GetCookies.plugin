@@ -43,4 +43,4 @@ http-request ^https?:\/\/m.bilibili.com/$ script-path=https://raw.githubusercont
 http-request ^https:\/\/i.meituan.com\/evolve\/signin\/signpost\/ script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.cookie.js, requires-body=true, timeout=60, enable = {arg13}, tag=美团获取token
 
 [MITM]
-hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,game.dominos.com.cn,gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,user-api.smzdm.com,api.cloud.189.cn,mobile.ximalaya.com,coral2.quark.cn,drive-pc.quark.cn,pos.meituan.com,mcs-mimp-web.sf-express.com,app.bilibili.com, m.bilibili.com, i.meituan.com
+hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,game.dominos.com.cn,gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,user-api.smzdm.com,api.cloud.189.cn,mobile.ximalaya.com,coral2.quark.cn,drive-pc.quark.cn,pos.meituan.com,mcs-mimp-web.sf-express.com,app.bilibili.com, m.bilibili.com, i.meituan.com,pos.meituan.com
