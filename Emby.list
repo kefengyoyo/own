@@ -153,3 +153,6 @@ DOMAIN,music.mefun.org
 
 # 探花TV
 IP-CIDR,152.53.67.239/32
+
+# 天南小筑
+DOMAIN-SUFFIX,nanflix.net
