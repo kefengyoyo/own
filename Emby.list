@@ -34,9 +34,8 @@ DOMAIN-SUFFIX,jmsuper.com
 DOMAIN-SUFFIX,play.charontv.com
 
 # 流媒体CC服务器
-DOMAIN-SUFFIX,cc.coemn.com
-DOMAIN-SUFFIX,carryz.net
-IP-CIDR,193.123.252.106/32
+DOMAIN-SUFFIX,coemn.com
+DOMAIN-SUFFIX,embycc.link
 
 # 流媒体MJJ服务器
 DOMAIN-SUFFIX,mjjemby.org
