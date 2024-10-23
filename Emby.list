@@ -41,7 +41,7 @@ DOMAIN-SUFFIX,embycc.link
 DOMAIN-SUFFIX,mjjemby.org
 
 # AWA影视
-DOMAIN-SUFFIX,tv.811861.xyz
+DOMAIN-SUFFIX,awatv.de
 IP-CIDR,38.58.181.218/32
 
 # 流媒体不给看服务器
