@@ -124,4 +124,5 @@ DOMAIN-SUFFIX,nanflix.net
 # ApopCloud
 DOMAIN-SUFFIX,apopcloud.live
 
-DOMAIN,hka-emby.aliz.work // hka-emby.aliz.work
+# hka
+DOMAIN,hka-emby.aliz.work
