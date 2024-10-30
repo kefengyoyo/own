@@ -41,11 +41,6 @@ DOMAIN-SUFFIX,carlos.trade
 DOMAIN-SUFFIX,film.hovervan.org
 DOMAIN-SUFFIX,9191001.xyz
 
-# 流媒体CbCb服务器
-DOMAIN-SUFFIX,emby.jzq.lol
-DOMAIN-SUFFIX,emby.cbcb.lol
-DOMAIN-SUFFIX,xgwc6.sharepoint.com
-
 # 流媒体叔服服务器
 DOMAIN-SUFFIX,emby3.mcjoker.xyz
 
@@ -57,7 +52,7 @@ DOMAIN-SUFFIX,bdd.topemby.com
 DOMAIN-SUFFIX,cf.xmsl.org
 DOMAIN-SUFFIX,cf.emby.moe
 DOMAIN-SUFFIX,free.xmsl.org
-DOMAIN,su.viclub.top
+DOMAIN-SUFFIX,su.viclub.top
 
 # 流媒体Paul服务器
 DOMAIN-SUFFIX,imetyou.top
