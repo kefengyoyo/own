@@ -57,6 +57,7 @@ DOMAIN-SUFFIX,bdd.topemby.com
 DOMAIN-SUFFIX,cf.xmsl.org
 DOMAIN-SUFFIX,cf.emby.moe
 DOMAIN-SUFFIX,free.xmsl.org
+DOMAIN,su.viclub.top
 
 # 流媒体Paul服务器
 DOMAIN-SUFFIX,imetyou.top
