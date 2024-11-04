@@ -37,10 +37,6 @@ DOMAIN,cf.bili.rip
 # 流媒体特卡服务器
 DOMAIN-SUFFIX,carlos.trade
 
-# 流媒体NME服务器
-DOMAIN-SUFFIX,film.hovervan.org
-DOMAIN-SUFFIX,9191001.xyz
-
 # 流媒体叔服服务器
 DOMAIN-SUFFIX,emby3.mcjoker.xyz
 
