@@ -1,8 +1,6 @@
 #!name = Task
 #!desc = 定时任务
-#!author = Sliverkiss [https://github.com/Sliverkiss]
-#!homePage = https://t.me/sliverkiss_blog
-#!data = 2024-09-14
+#!data = 2024-11-04
 #!icon = https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png
 #!system = iOS,iPadOS
 #!loon_version = 3.2.3(753)
@@ -22,16 +20,16 @@ arg11 = input,"59 8 * * *",tag=喜马拉雅任务时间
 arg12 = switch,true,tag=喜马拉雅任务开关
 arg13 = input,"06 9 * * *",tag=高德打车任务时间
 arg14 = switch,true,tag=高德打车任务开关
-arg15 = input,"30 8 * * *",tag=天翼网盘任务时间
-arg16 = switch,true,tag=天翼网盘任务开关
+#arg15 = input,"30 8 * * *",tag=天翼网盘任务时间
+#arg16 = switch,true,tag=天翼网盘任务开关
 arg17 = input,"55 7 * * *",tag=每日摸鱼任务时间
 arg18 = switch,true,tag=每日摸鱼任务开关
 arg19 = input,"55 23 * * *",tag=boxjs备份任务时间
 arg20 = switch,true,tag=boxjs备份任务开关
 arg21 = input,"10 8 * * ?",tag=汇率监控任务时间
 arg22 = switch,true,tag=汇率监控任务开关
-arg23 = input,"55 7 * * *",tag=夸克网盘任务时间
-arg24 = switch,true,tag=夸克网盘任务开关
+#arg23 = input,"55 7 * * *",tag=夸克网盘任务时间
+#arg24 = switch,true,tag=夸克网盘任务开关
 arg25 = input,"55 9 * * *",tag=顺丰速运任务时间
 arg26 = switch,true,tag=顺丰速运任务开关
 arg27 = input,"15 9 * * *",tag=读懂世界任务时间
@@ -42,8 +40,8 @@ arg31 = input,"30 7 * * *",tag=Bilibili任务时间
 arg32 = switch,true,tag=Bilibili任务开关
 arg33 = input,"30 7 * * *",tag=美团任务时间
 arg34 = switch,true,tag=美团任务开关
-arg35 = input,"22 30 7 * * *",tag=云闪付任务时间
-arg36 = switch,true,tag=云闪付任务开关
+#arg35 = input,"22 30 7 * * *",tag=云闪付任务时间
+#arg36 = switch,true,tag=云闪付任务开关
 arg37 = input,"0 9 * * *",tag=吾爱破解任务时间
 arg38 = switch,true,tag=吾爱破解任务开关
 
@@ -55,16 +53,16 @@ cron {arg7} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main
 cron {arg9} script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, timeout=300, enable= {arg10},tag=蜜雪冰城
 cron {arg11} script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, timeout=300, enable= {arg12}, tag=喜马拉雅
 cron {arg13} script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120, enable= {arg14}, tag=高德打车
-cron {arg15} script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.js, timeout=300, enable= {arg16}, tag=天翼网盘
+#cron {arg15} script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.js, timeout=300, enable= {arg16}, tag=天翼网盘
 cron {arg17} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/moyu.js, timeout=300, enable= {arg18}, tag=每日摸鱼
 cron {arg19} script-path=https://raw.githubusercontent.com/dompling/Script/master/gist/backup.js, timeout=300, enable= {arg20}, tag=boxjs备份
 cron {arg21} script-path=https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js, timeout=300, enable= {arg22}, tag=汇率监控
-cron {arg23} script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, timeout=300, enable= {arg24}, tag=夸克网盘
+#cron {arg23} script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, timeout=300, enable= {arg24}, tag=夸克网盘
 cron {arg25} script-path=https://raw.githubusercontent.com/kefengyoyo/own/main/sfsy.js, timeout=300, enable= {arg26}, tag=顺丰速运
 cron {arg27} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, timeout=300, enable={arg28}, tag=读懂世界
 cron {arg29} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,timeout=300, enable= {arg30}, tag=什么值得买
 cron {arg31} script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/refs/heads/main/js/BiliBiliDailyBonus.js,timeout=300, enable= {arg32}, tag=Bilibili
 cron {arg33} script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js,timeout=300, enable= {arg34}, tag=美团签到
-cron {arg35} script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/ysfV2.js,timeout=300, enable= {arg36}, tag=云闪付签到
-cron {arg37} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js,timeout=300, enable= {arg38}, tag=云闪付签到
+#cron {arg35} script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/ysfV2.js,timeout=300, enable= {arg36}, tag=云闪付签到
+cron {arg37} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js,timeout=300, enable= {arg38}, tag=52破解签到
 [MITM]
