@@ -62,9 +62,6 @@ DOMAIN-SUFFIX,stream4.misakaf.org
 DOMAIN-SUFFIX,main.gugu.media
 DOMAIN-SUFFIX,pro.gugu.media
 
-# 流媒体星光璀璨服务器
-DOMAIN-SUFFIX,9wfree.emby.eu.org
-
 # 流媒体威威服务器
 DOMAIN-SUFFIX,gy.embyvip.org
 
