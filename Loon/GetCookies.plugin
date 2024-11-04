@@ -2,7 +2,7 @@
 #!desc = 获取cookie/token
 #!author = Sliverkiss [https://github.com/Sliverkiss]
 #!homePage = https://t.me/sliverkiss_blog
-#!data = 2024-09-14
+#!data = 2024-11-04
 #!icon = https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png
 #!system = iOS,iPadOS
 #!loon_version = 3.2.3(753)
@@ -10,39 +10,39 @@
 [Argument]
 arg1 = switch,true,tag=奶茶多合一获取
 arg2 = switch,true,tag=达美乐披萨获取token
-arg3 = switch,true,tag=夸克网盘获取token
+#arg3 = switch,true,tag=夸克网盘获取token
 arg4 = switch,true,tag=蜜雪冰城获取token
 arg5 = switch,true,tag=龙湖天街获取token
 arg6 = switch,true,tag=万达智慧商业获取token
 arg7 = switch,true,tag=喜马拉雅获取token
 arg8 = switch,true,tag=高德打车token
 arg9 = switch,true,tag=什么值得买获取token
-arg10 = switch,true,tag=天翼网盘获取token
+#arg10 = switch,true,tag=天翼网盘获取token
 arg11 = switch,true,tag=顺丰速运获取token
 arg12 = switch,true,tag=Bilibili获取token
 arg13 = switch,true,tag=美团获取token
-arg14 = switch,true,tag=云闪付获取token
+#arg14 = switch,true,tag=云闪付获取token
 arg15 = switch,true,tag=52破解token
 [Script]
 http-response ^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, enable = {arg1}, tag=奶茶获取token
 http-request ^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, enable = {arg1}, tag=奶茶获取token
 http-request ^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, requires-body=true, timeout=10, enable = {arg2}, tag=达美乐披萨获取token
-http-response ^https:\/\/drive-pc\.quark\.cn\/1\/clouddrive\/file\/sort script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, enable = {arg3}, tag=夸克网盘获取token
-http-response ^https:\/\/coral2\.quark\.cn\/task\/trigger script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, enable = {arg3}, tag=夸克网盘福利日常收录任务
-http-request ^https:\/\/coral2\.quark\.cn\/quark\/(carbon|welfare)\/(v1|v2)\/signIn script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, enable = {arg3}, tag=夸克网盘空间签到收录任务
-http-request ^https:\/\/coral2\.quark\.cn\/quark\/welfare\/v2\/sleep\/trigger script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, enable = {arg3}, tag=夸克网盘睡眠打卡收录任务
+#http-response ^https:\/\/drive-pc\.quark\.cn\/1\/clouddrive\/file\/sort script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, enable = {arg3}, tag=夸克网盘获取token
+#http-response ^https:\/\/coral2\.quark\.cn\/task\/trigger script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, enable = {arg3}, tag=夸克网盘福利日常收录任务
+#http-request ^https:\/\/coral2\.quark\.cn\/quark\/(carbon|welfare)\/(v1|v2)\/signIn script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, enable = {arg3}, tag=夸克网盘空间签到收录任务
+#http-request ^https:\/\/coral2\.quark\.cn\/quark\/welfare\/v2\/sleep\/trigger script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60, enable = {arg3}, tag=夸克网盘睡眠打卡收录任务
 http-response ^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60,  enable = {arg4}, tag=蜜雪冰城获取token
 http-request ^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mvc\-prod\/openapi\/task\/v1\/signature\/clock script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, requires-body=true, timeout=60, enable = {arg5},  tag=龙湖天街获取token
 http-response ^https?:\/\/www\.wandawic\.com\/api\/foreground\/loginregister\/queryUser script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js,requires-body=true, timeout=60, enable = {arg6}, tag=万达智慧商业获取token
 http-request ^https?:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/ script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js,requires-body=true, timeout=60, enable = {arg7}, tag=喜马拉雅获取token
 http-response ^https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=) script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, requires-body=true, timeout=60,enable = {arg8}, tag=高德打车token
 http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,requires-body=true, timeout=60, enable = {arg9},tag=什么值得买获取token
-http-request ^https:\/\/api\.cloud\.189\.cn\/mkt\/userSign\.action? script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.cookie.js,requires-body=true, timeout=60, enable = {arg10}, tag=天翼网盘获取token
+#http-request ^https:\/\/api\.cloud\.189\.cn\/mkt\/userSign\.action? script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.cookie.js,requires-body=true, timeout=60, enable = {arg10}, tag=天翼网盘获取token
 http-response ^https:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/share\/weChat\/shareGiftReceiveRedirect.+ script-path=https://raw.githubusercontent.com/kefengyoyo/own/main/sfsy.js, requires-body=true, timeout=60,enable = {arg11} , tag=顺丰速运获取token
 http-request ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, requires-body=true, timeout=60,enable = {arg12},tag=Bilibili获取token(APP)
 http-request ^https?:\/\/m.bilibili.com/$ script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, requires-body=true, timeout=60,enable = {arg12},tag=Bilibili获取token(网页)
 http-request ^https:\/\/i.meituan.com\/evolve\/signin\/signpost\/ script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.cookie.js, requires-body=true, timeout=60, enable = {arg13}, tag=美团获取token
-http-request ^https:\/\/youhui.95516.com\/newsign\/api\/sharing_power\/showUserTask script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/ysfV2.js, timeout=10, enable = {arg14}, tag=云闪付签到获取token
+#http-request ^https:\/\/youhui.95516.com\/newsign\/api\/sharing_power\/showUserTask script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/ysfV2.js, timeout=10, enable = {arg14}, tag=云闪付签到获取token
 http-request ^https:\/\/www\.52pojie\.cn\/home\.php\? script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js, requires-body=true, max-size=0,timeout=10, enable = {arg15}, tag=52破解获取token
 [MITM]
 hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,game.dominos.com.cn,gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,user-api.smzdm.com,api.cloud.189.cn,mobile.ximalaya.com,coral2.quark.cn,drive-pc.quark.cn,pos.meituan.com,mcs-mimp-web.sf-express.com,app.bilibili.com, m.bilibili.com, i.meituan.com,youhui.95516.com,www.52pojie.cn
