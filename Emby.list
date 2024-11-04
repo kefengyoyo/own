@@ -45,10 +45,11 @@ DOMAIN-SUFFIX,media.bddup.com
 DOMAIN-SUFFIX,bdd.topemby.com
 
 # 流媒体垃圾影音服务器
-DOMAIN-SUFFIX,cf.xmsl.org
-DOMAIN-SUFFIX,cf.emby.moe
-DOMAIN-SUFFIX,free.xmsl.org
-DOMAIN-SUFFIX,su.viclub.top
+DOMAIN,cf.xmsl.org
+DOMAIN,cf.emby.moe
+DOMAIN,free.xmsl.org
+DOMAIN,su.viclub.top
+DOMAIN,krde.loseremby.org
 
 # 流媒体Paul服务器
 DOMAIN-SUFFIX,imetyou.top
