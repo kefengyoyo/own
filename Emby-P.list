@@ -50,3 +50,7 @@ DOMAIN-SUFFIX,9191001.xyz
 
 # 流媒体星光璀璨服务器
 DOMAIN,9wfree.emby.eu.org
+
+# AWA影视
+DOMAIN-SUFFIX,awatv.de
+IP-CIDR,38.58.181.218/32
