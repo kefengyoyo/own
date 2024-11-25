@@ -111,7 +111,7 @@ DOMAIN-SUFFIX,nanflix.net
 DOMAIN-SUFFIX,apopcloud.live
 
 # hka
-DOMAIN,hka-emby.aliz.work
+DOMAIN-SUFFIX,aliz.work
 
 # 大V
 DOMAIN,sj.viclub.top
