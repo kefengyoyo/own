@@ -14,4 +14,4 @@ http-response ^https:\/\/.*\.(intsig\.net|camscanner\.com) script-path=https://r
 # Spark
 # http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\w{14})$ script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/SparkMailProCrack.js, requires-body=true, timeout=60, tag=SparkMailProCrack
 # AppRaven
-http-response https://appraven.net/appraven/graphql script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/AppRaven.js
+http-response https://appraven.net/appraven/graphql script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/AppRaven.js, requires-body=true, timeout=60, tag=AppRaven
