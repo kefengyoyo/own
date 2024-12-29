@@ -23,7 +23,7 @@ arg12 = switch,true,tag=Bilibili获取token
 arg13 = switch,true,tag=美团获取token
 #arg14 = switch,true,tag=云闪付获取token
 arg15 = switch,true,tag=52破解token
-arg16 = switch,true,tag=广汽本田token
+#arg16 = switch,true,tag=广汽本田token
 [Script]
 http-response ^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, enable = {arg1}, tag=奶茶获取token
 http-request ^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign) script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60, enable = {arg1}, tag=奶茶获取token
@@ -45,6 +45,6 @@ http-request ^https?:\/\/m.bilibili.com/$ script-path=https://raw.githubusercont
 http-request ^https:\/\/i.meituan.com\/evolve\/signin\/signpost\/ script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.cookie.js, requires-body=true, timeout=60, enable = {arg13}, tag=美团获取token
 #http-request ^https:\/\/youhui.95516.com\/newsign\/api\/sharing_power\/showUserTask script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/ysfV2.js, timeout=10, enable = {arg14}, tag=云闪付签到获取token
 http-request ^https:\/\/www\.52pojie\.cn\/home\.php\? script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js, requires-body=true, max-size=0,timeout=10, enable = {arg15}, tag=52破解获取token
-http-request ^https:\/\/gw\.nevapp\.gtmc\.com\.cn\/ha\/iam\/api\/sec\/oauth\/token script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/GQFT/GQFT.js, requires-body=true, max-size=0,timeout=3600, enable = {arg16}, tag=广汽本田获取token
+#http-request ^https:\/\/gw\.nevapp\.gtmc\.com\.cn\/ha\/iam\/api\/sec\/oauth\/token script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/GQFT/GQFT.js, requires-body=true, max-size=0,timeout=3600, enable = {arg16}, tag=广汽本田获取token
 [MITM]
 hostname = webapi2.qmai.cn,webapi.qmai.cn,qmwebapi.qmai.cn,game.dominos.com.cn,gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,user-api.smzdm.com,api.cloud.189.cn,mobile.ximalaya.com,coral2.quark.cn,drive-pc.quark.cn,pos.meituan.com,mcs-mimp-web.sf-express.com,app.bilibili.com, m.bilibili.com, i.meituan.com,youhui.95516.com,www.52pojie.cn,gw.nevapp.gtmc.com.cn
