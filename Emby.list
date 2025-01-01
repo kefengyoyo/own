@@ -1,95 +1,52 @@
 # 流媒体Pilipili服务器
 DOMAIN-SUFFIX,pilipili.club
-
 # 流媒体misakaf服务器
 DOMAIN-SUFFIX,misakaf.org
-
 # 流媒体polo服务器
 DOMAIN-SUFFIX,poloemby.xyz
 DOMAIN-SUFFIX,auto.polodns.xyz
-
 # 流媒体peach服务器
 DOMAIN-SUFFIX,embymv.link
 IP-CIDR,193.123.232.141/32
-
-# 流媒体magic服务器
-DOMAIN-SUFFIX,freetz.top
-
 # 流媒体CC服务器
 DOMAIN-SUFFIX,coemn.com
 DOMAIN-SUFFIX,embycc.link
-
 # 流媒体MJJ服务器
 DOMAIN-SUFFIX,mjjemby.org
-
 # 流媒体不给看服务器
 DOMAIN-SUFFIX,c.emby.pro
 DOMAIN-SUFFIX,bgka.me
-
 # 流媒体HXD服务器
 DOMAIN,hxd.as174.com
 DOMAIN,cf.bili.rip
-
 # Hxd porn
 DOMAIN,emby.as174.de
-
 # 流媒体特卡服务器
 DOMAIN-SUFFIX,carlos.trade
-
 # 流媒体叔服服务器
 DOMAIN-SUFFIX,emby3.mcjoker.xyz
-
-# 流媒体BigDD服务器
-DOMAIN-SUFFIX,media.bddup.com
-DOMAIN-SUFFIX,bdd.topemby.com
-
 # 流媒体垃圾影音服务器
 DOMAIN,cf.xmsl.org
 DOMAIN,cf.emby.moe
 DOMAIN,free.xmsl.org
 DOMAIN,su.viclub.top
 DOMAIN,krde.loseremby.org
-
 # 流媒体Paul服务器
 DOMAIN-SUFFIX,imetyou.top
-
-# 流媒体TreeDiagram服务器
-DOMAIN-SUFFIX,789.123456.al
-DOMAIN-SUFFIX,stream4.misakaf.org
-
-# 流媒体GuGu服务器
-DOMAIN-SUFFIX,main.gugu.media
-DOMAIN-SUFFIX,pro.gugu.media
-
-# 流媒体威威服务器
-DOMAIN-SUFFIX,gy.embyvip.org
-
 # 流媒体NYAmedia服务器
 DOMAIN-SUFFIX,emby.bangumi.ca
-
-# 流媒体Marmot服务器
-DOMAIN-SUFFIX,20120714.xyz
-
 # 流媒体Temby服务器
 DOMAIN-SUFFIX,temby.285286.xyz
-
 # 流媒体Kentucky Fried Chicken服务器
 DOMAIN-SUFFIX,ntrrr.am.sb
 DOMAIN-SUFFIX,stream.ntrrr.top
-
 # 流媒体ACA服务器
 DOMAIN-SUFFIX,porn.aca.best
 DOMAIN-SUFFIX,emby.aca.best
 DOMAIN-SUFFIX,misakaf.org
-
 # 飞越彩虹
 DOMAIN-SUFFIX,7777777.buzz
 DOMAIN-SUFFIX,581658.best
-
-# heisi
-DOMAIN-SUFFIX,i109.com
-DOMAIN-SUFFIX,heisi.nekobox.best
-
 # starcat
 DOMAIN,wu2qu382uwb2y431-wxbki2.catlink.eu.org
 ##DOMAIN,flare.catlinks.co.uk
@@ -100,27 +57,20 @@ DOMAIN,dhs752jdkpq3ns.catlinks.co.uk
 DOMAIN,cdsalw2lw.catlinks.co.uk
 IP-CIDR,115.238.185.234/32
 DOMAIN,sefsehf3hiu2345ioj235.puddingcat.de
-
 # 音乐服未响
 DOMAIN,music.mefun.org
-
 # 天南小筑
 DOMAIN-SUFFIX,nanflix.net
-
 # ApopCloud
 DOMAIN-SUFFIX,apopcloud.live
-
 # hka
 DOMAIN-SUFFIX,aliz.work
-
 # 大V
 DOMAIN,sj.viclub.top
-
 # AlphaTV
 DOMAIN-SUFFIX,alphatvapp.top
 IP-CIDR,103.197.185.84/32
 IP-CIDR,154.40.33.88/32
 IP-CIDR,148.135.94.8/32
-
 # 飞越
 DOMAIN,z.sfcj.org
