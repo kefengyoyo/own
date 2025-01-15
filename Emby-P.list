@@ -20,10 +20,6 @@ DOMAIN-SUFFIX,i109.com
 DOMAIN-SUFFIX,heisi.nekobox.best
 # starcat
 DOMAIN-SUFFIX,flare.catlinks.co.uk
-# 探花TV
-IP-CIDR,152.53.67.239/32
-IP-CIDR,94.16.119.117/32
-DOMAIN-SUFFIX,tanhuatv.site
 # 流媒体放映厅服务器
 DOMAIN-SUFFIX,9191001.xyz
 # 流媒体星光璀璨服务器
