@@ -5,7 +5,7 @@ DOMAIN-SUFFIX,pilipiliultra.com
 DOMAIN-SUFFIX,misakaf.org
 # 流媒体polo服务器
 DOMAIN-SUFFIX,poloemby.xyz
-DOMAIN-SUFFIX,auto.polodns.xyz
+DOMAIN-SUFFIX,polodns.xyz
 # 流媒体peach服务器
 DOMAIN-SUFFIX,embymv.link
 IP-CIDR,193.123.232.141/32
@@ -15,7 +15,7 @@ DOMAIN-SUFFIX,embycc.link
 # 流媒体MJJ服务器
 DOMAIN-SUFFIX,mjjemby.org
 # 流媒体不给看服务器
-DOMAIN-SUFFIX,c.emby.pro
+DOMAIN-SUFFIX,emby.pro
 DOMAIN-SUFFIX,bgka.me
 # 流媒体HXD服务器
 DOMAIN,hxd.as174.com
@@ -25,23 +25,21 @@ DOMAIN-SUFFIX,carlos.trade
 # 流媒体叔服服务器
 DOMAIN-SUFFIX,emby3.mcjoker.xyz
 # 流媒体垃圾影音服务器
-DOMAIN,cf.xmsl.org
-DOMAIN,cf.emby.moe
-DOMAIN,free.xmsl.org
-DOMAIN,su.viclub.top
-DOMAIN,krde.loseremby.org
+DOMAIN-SUFFIX,xmsl.org
+DOMAIN-SUFFIX,emby.moe
+DOMAIN-SUFFIX,viclub.top
+DOMAIN-SUFFIX,loseremby.org
 # 流媒体Paul服务器
 DOMAIN-SUFFIX,imetyou.top
 # 流媒体NYAmedia服务器
-DOMAIN-SUFFIX,emby.bangumi.ca
+DOMAIN-SUFFIX,bangumi.ca
 # 流媒体Temby服务器
 DOMAIN-SUFFIX,temby.285286.xyz
 # 流媒体Kentucky Fried Chicken服务器
-DOMAIN-SUFFIX,ntrrr.am.sb
-DOMAIN-SUFFIX,stream.ntrrr.top
+DOMAIN-SUFFIX,am.sb
+DOMAIN-SUFFIX,ntrrr.top
 # 流媒体ACA服务器
-DOMAIN-SUFFIX,porn.aca.best
-DOMAIN-SUFFIX,emby.aca.best
+DOMAIN-SUFFIX,aca.best
 DOMAIN-SUFFIX,misakaf.org
 # 飞越彩虹
 DOMAIN-SUFFIX,7777777.buzz
