@@ -34,7 +34,7 @@ DOMAIN-SUFFIX,imetyou.top
 # 流媒体NYAmedia服务器
 DOMAIN-SUFFIX,bangumi.ca
 # 流媒体Temby服务器
-DOMAIN-SUFFIX,temby.285286.xyz
+DOMAIN,temby.285286.xyz
 # 流媒体Kentucky Fried Chicken服务器
 DOMAIN-SUFFIX,am.sb
 DOMAIN-SUFFIX,ntrrr.top
