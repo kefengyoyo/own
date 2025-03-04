@@ -1,8 +1,5 @@
-# 流媒体Pilipili服务器
-DOMAIN-SUFFIX,pilipili.club
-DOMAIN-SUFFIX,pilipiliultra.com
-# 流媒体misakaf服务器
-DOMAIN-SUFFIX,misakaf.org
+DOMAIN-SUFFIX,pilipili.club #流媒体Pilipili服务器
+DOMAIN-SUFFIX,pilipiliultra.com #流媒体Pilipili服务器
 # 流媒体polo服务器
 DOMAIN-SUFFIX,poloemby.xyz
 DOMAIN-SUFFIX,polodns.xyz
