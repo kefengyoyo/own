@@ -1,7 +1,7 @@
-DOMAIN-SUFFIX,pilipili.club /流媒体Pilipili服务器
-DOMAIN-SUFFIX,pilipiliultra.com /流媒体Pilipili服务器
-DOMAIN-SUFFIX,poloemby.xyz /流媒体polo服务器
-DOMAIN-SUFFIX,polodns.xyz /流媒体polo服务器
+DOMAIN-SUFFIX,pilipili.club #流媒体Pilipili服务器
+DOMAIN-SUFFIX,pilipiliultra.com #流媒体Pilipili服务器
+DOMAIN-SUFFIX,poloemby.xyz #流媒体polo服务器
+DOMAIN-SUFFIX,polodns.xyz #流媒体polo服务器
 # 流媒体peach服务器
 DOMAIN-SUFFIX,embymv.link
 IP-CIDR,193.123.232.141/32
