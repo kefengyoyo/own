@@ -35,4 +35,6 @@ DOMAIN-SUFFIX,saturday.video
 # 流媒体peach服务器
 DOMAIN-SUFFIX,embymv.link
 IP-CIDR,193.123.232.141/32
-
+# lyrebird
+DOMAIN-SUFFIX,lyrebirdemby.com
+IP-CIDR,188.172.228.65/32
