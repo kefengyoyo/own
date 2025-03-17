@@ -40,3 +40,6 @@ DOMAIN-SUFFIX,lyrebirdemby.com
 IP-CIDR,188.172.228.65/32
 # younoyes
 DOMAIN-SUFFIX,younoyes.com
+# ikun
+DOMAIN-SUFFIX,xxxh.de
+IP-CIDR,157.180.0.157/32
