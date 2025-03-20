@@ -2,7 +2,7 @@
 #!desc=软件破解
 
 [Mitm]
-hostname = api.sortedapp.com,*.camscanner.com, *.intsig.net,api.lrc.cx,appraven.net
+hostname = api.sortedapp.com,*.camscanner.com, *.intsig.net,api.lrc.cx,appraven.net,in.m.jd.com
 
 [Script]
 # Sorteds - 日历+解锁订阅
@@ -15,3 +15,5 @@ http-response ^https:\/\/.*\.(intsig\.net|camscanner\.com) script-path=https://r
 # http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\w{14})$ script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/SparkMailProCrack.js, requires-body=true, timeout=60, tag=SparkMailProCrack
 # AppRaven
 http-response https://appraven.net/appraven/graphql script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/AppRaven.js, requires-body=true, timeout=60, tag=AppRaven
+# jd比价
+http-response ^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://raw.githubusercontent.com/githubdulong/Script/master/jd_price.js, requires-body=true, timeout=30, tag=京东比价
