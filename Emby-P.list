@@ -43,3 +43,5 @@ DOMAIN-SUFFIX,xxxh.de
 IP-CIDR,157.180.0.157/32
 # 入机
 DOMAIN-SUFFIX,xytx.dpdns.org
+# paolu
+DOMAIN-SUFFIX,paoluma.de
