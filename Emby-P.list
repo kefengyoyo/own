@@ -29,7 +29,7 @@ DOMAIN-SUFFIX,biliblili.uk
 # 墨云阁
 DOMAIN-SUFFIX,mobaiemby.site
 # saturday
-DOMAIN-SUFFIX,saturdayvideo.top
+DOMAIN,lite.saturdayvideo.top
 # 流媒体peach服务器
 DOMAIN-SUFFIX,embymv.link
 IP-CIDR,193.123.232.141/32
