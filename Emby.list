@@ -22,6 +22,7 @@ DOMAIN-SUFFIX,xmsl.org
 DOMAIN-SUFFIX,emby.moe
 DOMAIN-SUFFIX,viclub.top
 DOMAIN-SUFFIX,loseremby.org
+IP-CIDR,152.70.233.134/24
 # 流媒体Paul服务器
 DOMAIN-SUFFIX,imetyou.top
 # 流媒体NYAmedia服务器
