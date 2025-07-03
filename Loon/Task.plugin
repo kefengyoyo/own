@@ -44,8 +44,8 @@ arg34 = switch,true,tag=美团任务开关
 #arg36 = switch,true,tag=云闪付任务开关
 arg37 = input,"0 9 * * *",tag=吾爱破解任务时间
 arg38 = switch,true,tag=吾爱破解任务开关
-#arg39 = input,"0 9 * * *",tag=广汽丰田任务时间
-#arg40 = switch,true,tag=广汽丰田任务开关
+arg39 = input,"0 9 * * *",tag=途虎养车任务时间
+arg40 = switch,true,tag=途虎养车任务开关
 
 [Script]
 cron {arg1} script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, enable= {arg2}, tag=奶茶多合一
@@ -67,5 +67,5 @@ cron {arg31} script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/re
 cron {arg33} script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js,timeout=300, enable= {arg34}, tag=美团签到
 #cron {arg35} script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/ysfV2.js,timeout=300, enable= {arg36}, tag=云闪付签到
 cron {arg37} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js,timeout=300, enable= {arg38}, tag=52破解签到
-#cron {arg39} script-path=https://raw.githubusercontent.com/xzxxn777/Surge/main/Script/GQFT/GQFT.js,timeout=300, enable= {arg40}, tag=广汽丰田签到
+cron {arg39} script-path=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js,timeout=300, enable= {arg40}, tag=途虎养车签到
 [MITM]
