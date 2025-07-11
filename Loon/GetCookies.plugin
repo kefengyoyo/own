@@ -16,7 +16,7 @@ arg5 = switch,true,tag=龙湖天街获取token
 arg6 = switch,true,tag=万达智慧商业获取token
 arg7 = switch,true,tag=喜马拉雅获取token
 arg8 = switch,true,tag=高德打车token
-arg9 = switch,true,tag=什么值得买获取token
+#arg9 = switch,true,tag=什么值得买获取token
 #arg10 = switch,true,tag=天翼网盘获取token
 arg11 = switch,true,tag=顺丰速运获取token
 arg12 = switch,true,tag=Bilibili获取token
@@ -37,7 +37,7 @@ http-request ^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mv
 http-response ^https?:\/\/www\.wandawic\.com\/api\/wic\-member\-application\/api\/user\/queryUser ,script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/wdzhsy/wdzhsy.js,requires-body=1, timeout=60, enable = {arg6}, tag=万达智慧商业²token
 http-request ^https?:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/ script-path=https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js,requires-body=true, timeout=60, enable = {arg7}, tag=喜马拉雅获取token
 http-response ^https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=) script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, requires-body=true, timeout=60,enable = {arg8}, tag=高德打车token
-http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,requires-body=true, timeout=60, enable = {arg9},tag=什么值得买获取token
+#http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,requires-body=true, timeout=60, enable = {arg9},tag=什么值得买获取token
 #http-request ^https:\/\/api\.cloud\.189\.cn\/mkt\/userSign\.action? script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.cookie.js,requires-body=true, timeout=60, enable = {arg10}, tag=天翼网盘获取token
 http-response ^https:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/share\/weChat\/shareGiftReceiveRedirect.+ script-path=https://raw.githubusercontent.com/kefengyoyo/own/main/sfsy.js, requires-body=true, timeout=60,enable = {arg11} , tag=顺丰速运获取token
 http-request ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, requires-body=true, timeout=60,enable = {arg12},tag=Bilibili获取token(APP)
