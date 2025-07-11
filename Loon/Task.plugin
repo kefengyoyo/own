@@ -34,8 +34,8 @@ arg25 = input,"55 9 * * *",tag=顺丰速运任务时间
 arg26 = switch,true,tag=顺丰速运任务开关
 arg27 = input,"15 9 * * *",tag=读懂世界任务时间
 arg28 = switch,true,tag=读懂世界任务开关
-arg29 = input,"25 9 * * *",tag=什么值得买任务时间
-arg30 = switch,true,tag=什么值得买任务开关
+#arg29 = input,"25 9 * * *",tag=什么值得买任务时间
+#arg30 = switch,true,tag=什么值得买任务开关
 arg31 = input,"30 7 * * *",tag=Bilibili任务时间
 arg32 = switch,true,tag=Bilibili任务开关
 arg33 = input,"30 7 * * *",tag=美团任务时间
@@ -62,7 +62,7 @@ cron {arg21} script-path=https://raw.githubusercontent.com/chxm1023/Task/main/hl
 #cron {arg23} script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, timeout=300, enable= {arg24}, tag=夸克网盘
 cron {arg25} script-path=https://raw.githubusercontent.com/kefengyoyo/own/main/sfsy.js, timeout=300, enable= {arg26}, tag=顺丰速运
 cron {arg27} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, timeout=300, enable={arg28}, tag=读懂世界
-cron {arg29} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,timeout=300, enable= {arg30}, tag=什么值得买
+#cron {arg29} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,timeout=300, enable= {arg30}, tag=什么值得买
 cron {arg31} script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/refs/heads/main/js/BiliBiliDailyBonus.js,timeout=300, enable= {arg32}, tag=Bilibili
 cron {arg33} script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js,timeout=300, enable= {arg34}, tag=美团签到
 #cron {arg35} script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/ysfV2.js,timeout=300, enable= {arg36}, tag=云闪付签到
