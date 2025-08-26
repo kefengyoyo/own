@@ -10,7 +10,7 @@ DOMAIN-SUFFIX,emby.agon.cf
 DOMAIN-SUFFIX,play.charontv.com
 # 纸片人
 DOMAIN-SUFFIX,embyplus.org
-DOMAIN-SUFFIX,gd.9521732.xyz
+#DOMAIN-SUFFIX,gd.9521732.xyz
 # starcat
 DOMAIN-SUFFIX,flare.catlinks.co.uk
 # 流媒体放映厅服务器
