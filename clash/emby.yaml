@@ -74,7 +74,7 @@ payload:
   - DOMAIN-SUFFIX,wenjian.de
   - DOMAIN,18nsqx-my.sharepoint.com
   - DOMAIN,emusica.91bp.us.kg
-  - DOMAIN-SUFFIX,emby.my
+  - DOMAIN,a.emby.my
   - DOMAIN-SUFFIX,alien666.me
   - DOMAIN-SUFFIX,nijigem.by
   - DOMAIN,default.cdn.bgp.yt
