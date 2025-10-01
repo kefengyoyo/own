@@ -47,7 +47,7 @@ payload:
   - DOMAIN-SUFFIX,emby.moe
   - DOMAIN-SUFFIX,viclub.top
   - DOMAIN-SUFFIX,loseremby.org
-  - DOMAIN-SUFFIX,imetyou.top
+  - DOMAIN,cf.imetyou.top
   - DOMAIN-SUFFIX,bangumi.ca
   - DOMAIN-SUFFIX,am.sb
   - DOMAIN-SUFFIX,ntrrr.top
