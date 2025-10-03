@@ -1,88 +1,9 @@
-DOMAIN-SUFFIX,pilipili.club //流媒体Pilipili服务器
-DOMAIN-SUFFIX,pilipiliultra.com //流媒体Pilipili服务器
-DOMAIN-SUFFIX,poloemby.xyz //流媒体polo服务器
-DOMAIN-SUFFIX,polodns.xyz //流媒体polo服务器
-# 流媒体CC服务器
-DOMAIN-SUFFIX,coemn.com
-DOMAIN-SUFFIX,embycc.link
-# 流媒体MJJ服务器
-DOMAIN-SUFFIX,mjjemby.org
-# 流媒体不给看服务器
-DOMAIN-SUFFIX,emby.pro
-DOMAIN-SUFFIX,bgka.me
-# 流媒体HXD服务器
-DOMAIN,hxd.as174.com
-DOMAIN,cf.bili.rip
-# 流媒体特卡服务器
-DOMAIN-SUFFIX,carlos.trade
-# 流媒体叔服服务器
-DOMAIN-SUFFIX,emby3.mcjoker.xyz
-# 流媒体垃圾影音服务器
-DOMAIN-SUFFIX,xmsl.org
-DOMAIN-SUFFIX,emby.moe
-DOMAIN-SUFFIX,viclub.top
-DOMAIN-SUFFIX,loseremby.org
-IP-CIDR,152.70.233.134/24
-# 流媒体Paul服务器
-DOMAIN-SUFFIX,imetyou.top
-# 流媒体NYAmedia服务器
-DOMAIN-SUFFIX,bangumi.ca
-# 流媒体Temby服务器
-DOMAIN-SUFFIX,285286.xyz
-# 流媒体Kentucky Fried Chicken服务器
-DOMAIN-SUFFIX,am.sb
-DOMAIN-SUFFIX,ntrrr.top
-# 飞越彩虹
-DOMAIN-SUFFIX,7777777.buzz
-DOMAIN-SUFFIX,581658.best
-DOMAIN-SUFFIX,feiyue.lol
-IP-CIDR,193.122.114.13/32
-# starcat
-DOMAIN,wu2qu382uwb2y431-wxbki2.catlink.eu.org
-##DOMAIN,flare.catlinks.co.uk
-DOMAIN,starcat-gshou.887711.xyz
-DOMAIN,Wsjqi279-jsbe-wiooe13-wuie.catlinks.co.uk
-DOMAIN,shuigawd921hfs-ef27893hrsf.catlinks.co.uk
-DOMAIN,dhs752jdkpq3ns.catlinks.co.uk
-DOMAIN,cdsalw2lw.catlinks.co.uk
-IP-CIDR,115.238.185.234/32
-DOMAIN,sefsehf3hiu2345ioj235.puddingcat.de
-# 音乐服未响
-DOMAIN,music.mefun.org
-# 天南小筑
-DOMAIN-SUFFIX,nanflix.net
-# ApopCloud
-DOMAIN-SUFFIX,apopcloud.live
-# hka
-DOMAIN-SUFFIX,aliz.work
-# 大V
-DOMAIN,sj.viclub.top
 # AlphaTV
-DOMAIN-SUFFIX,alphatvapp.top
-IP-CIDR,103.197.185.84/32
-IP-CIDR,154.40.33.88/32
-IP-CIDR,148.135.94.8/32
-# 飞越
-DOMAIN,z.sfcj.org
-# 探花TV
-IP-CIDR,152.53.67.239/32
-IP-CIDR,94.16.119.117/32
-DOMAIN-SUFFIX,tanhuatv.site
-# dove nest
-DOMAIN-SUFFIX,doven.tv
-# eqip电子书
-DOMAIN-SUFFIX,wenjian.de
-DOMAIN,18nsqx-my.sharepoint.com
-# 鹅音乐
-DOMAIN,emusica.91bp.us.kg
-# 月饼
-DOMAIN-SUFFIX,emby.my
-# cimmeraemby
-DOMAIN-SUFFIX,alien666.me
-# 二次元
-DOMAIN-SUFFIX,nijigem.by
-DOMAIN,default.cdn.bgp.yt
-DOMAIN,ct.cdn.bgp.yt
-DOMAIN,cu.cdn.bgp.yt
-# 琉璃
-DOMAIN,emby.kongcheng666.dpdns.org
+IP-CIDR,43.139.184.65:80/32
+# MICU
+DOMAIN,tv.micu.hk
+DOMAIN,tv1.micu.hk
+# saodu
+DOMAIN-SUFFIX,saodu.asia
+# Temby
+DOMAIN-SUFFIX,temby856.285286.xyz
