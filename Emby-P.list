@@ -11,12 +11,8 @@ DOMAIN-SUFFIX,play.charontv.com
 # 纸片人
 DOMAIN-SUFFIX,embyplus.org
 #DOMAIN-SUFFIX,gd.9521732.xyz
-# starcat
-DOMAIN-SUFFIX,flare.catlinks.co.uk
 # 流媒体放映厅服务器
 DOMAIN-SUFFIX,9191001.xyz
-# 流媒体星光璀璨服务器
-DOMAIN,9wfree.emby.eu.org
 # AWA影视
 DOMAIN-SUFFIX,awatv.de
 IP-CIDR,38.58.181.218/32
@@ -41,9 +37,6 @@ DOMAIN-SUFFIX,younoyes.com
 # ikun
 DOMAIN-SUFFIX,xxxh.de
 IP-CIDR,157.180.0.157/32
-# 入机
-DOMAIN-SUFFIX,rjf37.com
-DOMAIN-SUFFIX,010004.xyz
 # paolu
 DOMAIN-SUFFIX,paoluma.de
 # yunti
@@ -54,11 +47,6 @@ DOMAIN-SUFFIX,feiniu.lol
 DOMAIN-SUFFIX,785858.xyz
 # ikun音乐
 DOMAIN-SUFFIX,diaojinping.de
-# emby备份
-DOMAIN-SUFFIX,8897122.xyz
-IP-CIDR,17.248.216.66/32
-IP-CIDR,17.248.216.67/32
-DOMAIN-SUFFIX,emby.zn.al
 # zox free
 DOMAIN-SUFFIX,zoxfree.3767483.xyz
 # 骑兵
@@ -67,8 +55,6 @@ DOMAIN-SUFFIX,emby.heisi.org
 DOMAIN-SUFFIX,staryuki.me
 # BAVA
 DOMAIN,mperformance.mebimmer.de
-# ichinose
-DOMAIN-SUFFIX,191920.xyz
 # emos
 DOMAIN-SUFFIX,emos.lol
 # 云云
@@ -82,3 +68,67 @@ DOMAIN,shouer.910427.xyz
 DOMAIN,emby.hohai.eu.org
 #卷毛鼠
 DOMAIN,mini.jmsuper.com
+DOMAIN-SUFFIX,pilipili.club //流媒体Pilipili服务器
+DOMAIN-SUFFIX,pilipiliultra.com //流媒体Pilipili服务器
+DOMAIN-SUFFIX,poloemby.xyz //流媒体polo服务器
+DOMAIN-SUFFIX,polodns.xyz //流媒体polo服务器
+# 流媒体CC服务器
+DOMAIN-SUFFIX,coemn.com
+DOMAIN-SUFFIX,embycc.link
+# 流媒体MJJ服务器
+DOMAIN-SUFFIX,mjjemby.org
+# 流媒体不给看服务器
+DOMAIN-SUFFIX,emby.pro
+DOMAIN-SUFFIX,bgka.me
+# 流媒体HXD服务器
+DOMAIN,hxd.as174.com
+DOMAIN,cf.bili.rip
+# 流媒体特卡服务器
+DOMAIN-SUFFIX,carlos.trade
+# 流媒体叔服服务器
+DOMAIN-SUFFIX,emby3.mcjoker.xyz
+# 流媒体垃圾影音服务器
+DOMAIN-SUFFIX,xmsl.org
+DOMAIN-SUFFIX,emby.moe
+DOMAIN-SUFFIX,viclub.top
+DOMAIN-SUFFIX,loseremby.org
+IP-CIDR,152.70.233.134/24
+# 流媒体Paul服务器
+DOMAIN-SUFFIX,imetyou.top
+# 流媒体NYAmedia服务器
+DOMAIN-SUFFIX,bangumi.ca
+# 流媒体Temby服务器
+DOMAIN-SUFFIX,285286.xyz
+# 流媒体Kentucky Fried Chicken服务器
+DOMAIN-SUFFIX,am.sb
+DOMAIN-SUFFIX,ntrrr.top
+# 飞越彩虹
+DOMAIN-SUFFIX,feiyue.lol
+# 音乐服未响
+DOMAIN,music.mefun.org
+# 天南小筑
+DOMAIN-SUFFIX,nanflix.net
+# hka
+DOMAIN-SUFFIX,aliz.work
+# 大V
+DOMAIN,sj.viclub.top
+# AlphaTV
+DOMAIN-SUFFIX,aaa.204cloud.com
+# 飞越
+DOMAIN,z.sfcj.org
+# dove nest
+DOMAIN-SUFFIX,doven.tv
+# eqip电子书
+DOMAIN-SUFFIX,wenjian.de
+DOMAIN,18nsqx-my.sharepoint.com
+# 鹅音乐
+DOMAIN,emusica.91bp.us.kg
+# 月饼
+DOMAIN-SUFFIX,emby.my
+# 二次元
+DOMAIN-SUFFIX,nijigem.by
+DOMAIN,default.cdn.bgp.yt
+DOMAIN,ct.cdn.bgp.yt
+DOMAIN,cu.cdn.bgp.yt
+# 琉璃
+DOMAIN,emby.kongcheng666.dpdns.org
