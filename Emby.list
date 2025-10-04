@@ -1,8 +1,7 @@
 # AlphaTV
 IP-CIDR,43.139.184.65/24
 # MICU
-DOMAIN,tv.micu.hk
-DOMAIN,tv1.micu.hk
+DOMAIN-SUFFIX,micu.hk
 # saodu
 DOMAIN-SUFFIX,saodu.asia
 # Temby
