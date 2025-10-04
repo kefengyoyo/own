@@ -1,5 +1,5 @@
 # AlphaTV
-IP-CIDR,43.139.184.65:80/24
+IP-CIDR,43.139.184.65/24
 # MICU
 DOMAIN,tv.micu.hk
 DOMAIN,tv1.micu.hk
