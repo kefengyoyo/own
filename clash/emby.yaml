@@ -91,7 +91,7 @@ payload:
   - DOMAIN,emby.kongcheng666.dpdns.org
   - DOMAIN,eo-star.staryuki.com
   - DOMAIN-SUFFIX,chilledmelon.com
-  - DOMAIN,gy.meowfly.de
+  - DOMAIN-SUFFIX,meowfly.de
   - DOMAIN-SUFFIX,as174.de
   - DOMAIN,playz.mjji.de
   - DOMAIN,xxxxx.xxxxx.com
