@@ -80,16 +80,15 @@ payload:
   - DOMAIN,ciallo.party
   - DOMAIN,emby3.mcjoker.xyz
   - DOMAIN,yhemby.top
-  - DOMAIN,tanhuatv.site
   - DOMAIN,emby.zn.al
   - DOMAIN,zoxfree.3767483.xyz
   - DOMAIN,emby.heisi.org
   - DOMAIN,lite.cn2gias.uk
-  - DOMAIN,mperformance.mebimmer.de
+  - DOMAIN-SUFFIX,mebimmer.de
   - DOMAIN,ichinosekotomi.191920.xyz
   - DOMAIN,emos.lol
   - DOMAIN,emby.kongcheng666.dpdns.org
-  - DOMAIN,eo-star.staryuki.com
+  - DOMAIN-SUFFIX,staryuki.com
   - DOMAIN-SUFFIX,chilledmelon.com
   - DOMAIN-SUFFIX,meowfly.de
   - DOMAIN-SUFFIX,as174.de
