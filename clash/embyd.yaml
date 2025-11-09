@@ -10,5 +10,4 @@
 payload:
   - DOMAIN-SUFFIX,micu.hk
   - DOMAIN-SUFFIX,saodu.asia
-  - DOMAIN-SUFFIX,temby856.285286.xyz
   - IP-CIDR,43.139.184.65:80/32,no-resolve
