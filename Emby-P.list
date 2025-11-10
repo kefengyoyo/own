@@ -140,6 +140,6 @@ DOMAIN-SUFFIX,tufei.de
 # nsfw
 DOMAIN,nsfw.xrbzy.xyz
 # 起点测试
-DOMAIN,free4.28.al
+DOMAIN-SUFFIX,28.al
 # Temby
 DOMAIN-SUFFIX,285286.xyz
