@@ -84,6 +84,7 @@ DOMAIN,cf.bili.rip
 DOMAIN-SUFFIX,carlos.trade
 # 流媒体叔服服务器
 DOMAIN-SUFFIX,mcjoker.xyz
+DOMAIN,emby.shufu.club
 # 流媒体垃圾影音服务器
 DOMAIN-SUFFIX,xmsl.org
 DOMAIN-SUFFIX,emby.moe
