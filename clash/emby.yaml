@@ -90,7 +90,7 @@ payload:
   - DOMAIN-SUFFIX,staryuki.com
   - DOMAIN-SUFFIX,chilledmelon.com
   - DOMAIN-SUFFIX,meowfly.de
-  - DOMAIN-SUFFIX,as174.de
+  - DOMAIN,emby.as174.de
   - DOMAIN,playz.mjji.de
   - DOMAIN,xxxxx.xxxxx.com
   - DOMAIN,shouer.910427.xyz
