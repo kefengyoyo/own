@@ -12,4 +12,5 @@ payload:
   - DOMAIN-SUFFIX,saodu.asia
   - DOMAIN-SUFFIX,204cloud.com
   - DOMAIN,hxd.as174.com
+  - DOMAIN-SUFFIX,10520.xyz
   - IP-CIDR,43.139.184.65:80/32,no-resolve
