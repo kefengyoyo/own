@@ -114,4 +114,5 @@ payload:
   - DOMAIN,nsfw.oceancloud.asia
   - DOMAIN-SUFFIX,10520.xyz
   - DOMAIN,kessoku-bando.biliblili.uk
+  - DOMAIN,streaming.biliblili.uk:443
   - DOMAIN,embygy.ichinosekotomi.com
