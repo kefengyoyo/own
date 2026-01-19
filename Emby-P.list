@@ -80,6 +80,8 @@ DOMAIN-SUFFIX,embycc.link
 DOMAIN-SUFFIX,mjjemby.org
 # 流媒体HXD服务器
 DOMAIN,cf.bili.rip
+# hxd
+DOMAIN,hxd.as174.com
 # 流媒体特卡服务器
 DOMAIN-SUFFIX,carlos.trade
 # 流媒体叔服服务器
