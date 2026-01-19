@@ -20,6 +20,9 @@ IP-CIDR,38.58.181.218/32
 DOMAIN-SUFFIX,nebula-media.org
 # Hxd porn
 DOMAIN,emby.as174.de
+# 流媒体HXD服务器
+DOMAIN,cf.bili.rip
+DOMAIN,hxd.as174.de
 # 牢大
 DOMAIN,kessoku-bando.biliblili.uk
 DOMAIN,streaming.biliblili.uk:443
@@ -78,10 +81,6 @@ DOMAIN-SUFFIX,coemn.com
 DOMAIN-SUFFIX,embycc.link
 # 流媒体MJJ服务器
 DOMAIN-SUFFIX,mjjemby.org
-# 流媒体HXD服务器
-DOMAIN,cf.bili.rip
-# hxd
-DOMAIN,hxd.as174.com
 # 流媒体特卡服务器
 DOMAIN-SUFFIX,carlos.trade
 # 流媒体叔服服务器
