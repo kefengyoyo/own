@@ -4,3 +4,6 @@ IP-CIDR,43.139.184.65/24
 DOMAIN-SUFFIX,micu.hk
 # saodu
 DOMAIN-SUFFIX,saodu.asia
+# nya media
+DOMAIN,ap-cn01.emby.bangumi.ca
+DOMAIN,ap-cn02.emby.bangumi.ca
