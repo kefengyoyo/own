@@ -12,6 +12,7 @@ payload:
   - DOMAIN-SUFFIX,saodu.asia
   - DOMAIN-SUFFIX,204cloud.com
   - IP-CIDR,43.139.184.65:80/32,no-resolve
+  - IP-CIDR,43.248.142.114:2222/32
   - DOMAIN,ap-cn01.emby.bangumi.ca
   - DOMAIN,ap-cn02.emby.bangumi.ca
   - DOMAIN-SUFFIX,101514.xyz
