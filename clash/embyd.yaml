@@ -16,3 +16,5 @@ payload:
   - DOMAIN,ap-cn01.emby.bangumi.ca
   - DOMAIN,ap-cn02.emby.bangumi.ca
   - DOMAIN-SUFFIX,101514.xyz
+  - DOMAIN,mi2.miraiemby.com
+  - DOMAIN,mi3.miraiemby.com
