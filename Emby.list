@@ -12,3 +12,6 @@ DOMAIN-SUFFIX,101514.xyz
 # 二次元
 DOMAIN,default.cdn.bgp.yt
 DOMAIN,ct.cdn.bgp.yt
+# Mirai推流
+DOMAIN,mi2.miraiemby.com
+DOMAIN,mi3.miraiemby.com
