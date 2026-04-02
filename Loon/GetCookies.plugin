@@ -21,4 +21,4 @@ http-request ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? script-p
 http-request ^https?:\/\/m.bilibili.com/$ script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js, requires-body=true, timeout=60,enable = {arg12},tag=Bilibili获取token(网页)
 http-request ^https:\/\/www\.52pojie\.cn\/home\.php\? script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js, requires-body=true, max-size=0,timeout=10, enable = {arg15}, tag=52破解获取token
 [MITM]
-hostname = gw2c-hw-open.longfor.com,www.wandawic.com,mxsa.mxbc.net,xmc.ximalaya.com,*.amap.com, dache.amap.com,mobile.ximalaya.com,app.bilibili.com, m.bilibili.com, www.52pojie.cn
+hostname = gw2c-hw-open.longfor.com,xmc.ximalaya.com,*.amap.com, dache.amap.com,mobile.ximalaya.com,app.bilibili.com, m.bilibili.com, www.52pojie.cn
