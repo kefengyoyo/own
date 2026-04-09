@@ -117,7 +117,7 @@ payload:
   - DOMAIN,nsfw.oceancloud.asia
   - DOMAIN-SUFFIX,biliblili.uk
   - DOMAIN,emby.ichinosekotomi.com
-  - DOMAIN,emby.dnscf.dpdns.org
+  - DOMAIN-SUFFIX,dpdns.org
   - DOMAIN,faemby.vip
   - DOMAIN,mi.miraiemby.com
   - DOMAIN,wp.lyezi.cc
