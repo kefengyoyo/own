@@ -166,7 +166,7 @@ DOMAIN,yinhai.aiinyue.com
 # 云海pron
 DOMAIN,nsfw.oceancloud.asia
 # HG-emby
-DOMAIN,emby.dnscf.dpdns.org
+DOMAIN-SUFFIX,dpdns.org
 DOMAIN,my.microsoftpersonalcontent.com
 # 我身无拘
 DOMAIN,faemby.vip
