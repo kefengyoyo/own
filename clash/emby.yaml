@@ -119,7 +119,7 @@ payload:
   - DOMAIN,nsfw.oceancloud.asia
   - DOMAIN-SUFFIX,biliblili.uk
   - DOMAIN,emby.ichinosekotomi.com
-  - DOMAIN-SUFFIX,dpdns.org
+  - DOMAIN,hgemby.qzz.io
   - DOMAIN,faemby.vip
   - DOMAIN,mi.miraiemby.com
   - DOMAIN,wp.lyezi.cc
