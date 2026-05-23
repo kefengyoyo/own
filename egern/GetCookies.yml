@@ -59,7 +59,7 @@ scriptings:
   - http_request:
       name: NodeSeek获取Headers
       match: "^https?://www\\.nodeseek\\.com/api/account/getInfo/\\d+\\?readme=1$"
-      script_url: "https://raw.githubusercontent.com/kefengyoyo/own/main/Egern/Nodeseek_GetHeaders.js"
+      script_url: "https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/Egern/Nodeseek_GetHeaders.js"
       timeout: 60
       body_required: true
       disabled: false
