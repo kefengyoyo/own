@@ -1,0 +1,78 @@
+name: "GetCookies 获取Cookie/Token"
+description: "抓取各平台 Cookie/Token，包含龙湖天街、喜马拉雅、高德打车、Bilibili、52破解、NodeSeek"
+author: "Sliverkiss / ZenmoFeiShi"
+homepage: "https://t.me/sliverkiss_blog"
+icon: "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png"
+
+scriptings:
+  - http_request:
+      name: 龙湖天街获取Token
+      match: "^https?://gw2c-hw-open\\.longfor\\.com/lmarketing-task-api-mvc-prod/openapi/task/v1/signature/clock"
+      script_url: "https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js"
+      timeout: 60
+      body_required: true
+      disabled: false
+
+  - http_request:
+      name: 喜马拉雅获取Token
+      match: "^https?://xmc\\.ximalaya\\.com/xmlymain-login-web/login/"
+      script_url: "https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/xmlySign.js"
+      timeout: 60
+      body_required: true
+      disabled: false
+
+  - http_response:
+      name: 高德打车获取Token
+      match: "^https://(m5(-zb)?|dache)\\.amap\\.com/(ws/yuece/(act|openapi/activity/current)/query|common/(alipaymini|wxmini)\\?_ENCRYPT=)"
+      script_url: "https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js"
+      timeout: 60
+      body_required: true
+      disabled: false
+
+  - http_request:
+      name: Bilibili获取Token(APP)
+      match: "^https?://app\\.bilibili\\.com/x/resource/fingerprint\\?"
+      script_url: "https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js"
+      timeout: 60
+      body_required: true
+      disabled: false
+
+  - http_request:
+      name: Bilibili获取Token(网页)
+      match: "^https?://m\\.bilibili\\.com/$"
+      script_url: "https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js"
+      timeout: 60
+      body_required: true
+      disabled: false
+
+  - http_request:
+      name: 52破解获取Token
+      match: "^https://www\\.52pojie\\.cn/home\\.php\\?"
+      script_url: "https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js"
+      timeout: 10
+      body_required: true
+      disabled: false
+
+  # NodeSeek 获取请求头
+  # 触发方式：打开 NodeSeek → 点击个人头像 → 进入信息页面
+  # 收到「NS Headers 获取成功」通知后即可使用签到任务
+  - http_request:
+      name: NodeSeek获取Headers
+      match: "^https?://www\\.nodeseek\\.com/api/account/getInfo/\\d+\\?readme=1$"
+      script_url: "https://raw.githubusercontent.com/kefengyoyo/own/main/Egern/Nodeseek_GetHeaders.js"
+      timeout: 60
+      body_required: true
+      disabled: false
+
+mitm:
+  hostnames:
+    includes:
+      - "gw2c-hw-open.longfor.com"
+      - "xmc.ximalaya.com"
+      - "*.amap.com"
+      - "dache.amap.com"
+      - "mobile.ximalaya.com"
+      - "app.bilibili.com"
+      - "m.bilibili.com"
+      - "www.52pojie.cn"
+      - "www.nodeseek.com"

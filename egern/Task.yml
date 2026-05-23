@@ -3,89 +3,6 @@ description: "定时签到任务合集，包含龙湖天街、喜马拉雅、高
 author: "kefengyoyo / ZenmoFeiShi"
 icon: "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/icon/gril.png"
 
-env_schema:
-  LHTJ_CRON:
-    name: 龙湖天街任务时间
-    description: Cron 表达式，默认每天 09:05
-    default_value: "05 9 * * *"
-  LHTJ_ENABLE:
-    name: 龙湖天街任务开关
-    options:
-      - "true"
-      - "false"
-  XMLY_CRON:
-    name: 喜马拉雅任务时间
-    description: Cron 表达式，默认每天 08:59
-    default_value: "59 8 * * *"
-  XMLY_ENABLE:
-    name: 喜马拉雅任务开关
-    options:
-      - "true"
-      - "false"
-  AMP_CRON:
-    name: 高德打车任务时间
-    description: Cron 表达式，默认每天 09:06
-    default_value: "06 9 * * *"
-  AMP_ENABLE:
-    name: 高德打车任务开关
-    options:
-      - "true"
-      - "false"
-  MOYU_CRON:
-    name: 每日摸鱼任务时间
-    description: Cron 表达式，默认每天 07:55
-    default_value: "55 7 * * *"
-  MOYU_ENABLE:
-    name: 每日摸鱼任务开关
-    options:
-      - "true"
-      - "false"
-  HLJK_CRON:
-    name: 汇率监控任务时间
-    description: Cron 表达式，默认每天 08:10
-    default_value: "10 8 * * *"
-  HLJK_ENABLE:
-    name: 汇率监控任务开关
-    options:
-      - "true"
-      - "false"
-  S60S_CRON:
-    name: 读懂世界任务时间
-    description: Cron 表达式，默认每天 09:15
-    default_value: "15 9 * * *"
-  S60S_ENABLE:
-    name: 读懂世界任务开关
-    options:
-      - "true"
-      - "false"
-  BILI_CRON:
-    name: Bilibili任务时间
-    description: Cron 表达式，默认每天 07:30
-    default_value: "30 7 * * *"
-  BILI_ENABLE:
-    name: Bilibili任务开关
-    options:
-      - "true"
-      - "false"
-  POJIE_CRON:
-    name: 52破解签到时间
-    description: Cron 表达式，默认每天 09:00
-    default_value: "0 9 * * *"
-  POJIE_ENABLE:
-    name: 52破解签到开关
-    options:
-      - "true"
-      - "false"
-  NS_CRON:
-    name: NodeSeek签到时间
-    description: Cron 表达式，默认每天 00:01
-    default_value: "1 0 * * *"
-  NS_ENABLE:
-    name: NodeSeek签到开关
-    options:
-      - "true"
-      - "false"
-
 scriptings:
   - schedule:
       name: 龙湖天街
@@ -143,10 +60,10 @@ scriptings:
       timeout: 300
       disabled: false
 
-  # NodeSeek 签到（需先通过 GetCookies 模块抓取 Headers）
+  # NodeSeek 签到（依赖 GetCookies 模块先行抓取请求头）
   - schedule:
       name: NodeSeek签到
       cron: "1 0 * * *"
-      script_url: "https://raw.githubusercontent.com/kefengyoyo/own/main/Egern/Nodeseek_NsCheckin.js"
+      script_url: "https://raw.githubusercontent.com/kefengyoyo/own/main/Egern/Nodeseek_Checkin.js"
       timeout: 60
       disabled: false
