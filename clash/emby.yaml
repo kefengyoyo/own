@@ -57,6 +57,7 @@ payload:
   - DOMAIN-SUFFIX,nanflix.net
   - DOMAIN-SUFFIX,aliz.work
   - DOMAIN-SUFFIX,sfcj.org
+  - DOMAIN,media.emby.pro
   - DOMAIN-SUFFIX,tanhuatv.site
   - DOMAIN-SUFFIX,doven.tv
   - DOMAIN-SUFFIX,wenjian.de
