@@ -114,7 +114,7 @@ DOMAIN,sj.viclub.top
 # AlphaTV
 DOMAIN-SUFFIX,204cloud.com
 # 飞越
-DOMAIN,z.sfcj.org
+DOMAIN-SUFFIX,sfcj.org
 # dove nest
 DOMAIN-SUFFIX,doven.tv
 # eqip电子书
