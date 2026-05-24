@@ -66,9 +66,8 @@ scriptings:
       
   - http_request:
       name: V2EX Cookie获取
-      type: request
-       pattern: ^https://www\.v2ex\.com/mission/daily
-       script-path: "https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/v2ex_checkin.js" 
+      match: "^https://www\.v2ex\.com/mission/daily"
+      script_url: "https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/v2ex_checkin.js" 
       timeout: 60
       body_required: true
       disabled: false
