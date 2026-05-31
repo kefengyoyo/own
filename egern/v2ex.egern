@@ -1,36 +1,24 @@
-# ======================================
-# V2EX 每日签到 - Egern 模块
-# 作者：Curtinp118（Egern 适配）
-# 说明：
-#   Step 1 - 开启模块后，打开 V2EX App 或浏览器访问
-#            https://www.v2ex.com/ 个人主页 / mission / member 相关页面，
-#            触发抓包规则自动保存 Cookie。
-#   Step 2 - 每天 09:10 定时任务自动签到领取铜币。
-# ======================================
-
 name: V2EX 每日签到
-desc: V2EX 每日签到领取铜币
-version: 1
+description: 自动抓取 Cookie 并每日签到领取铜币
 author: Curtinp118
 icon: https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/04ProxySoft/V2ex.png
 
-# ---- MITM 解密域名 ----
 mitm:
-  - www.v2ex.com
+  hostnames:
+    - www.v2ex.com
 
-# ---- 脚本规则 ----
-scripts:
-  # 抓包：访问 V2EX 相关页面时自动提取并保存 Cookie
-  - name: V2EX 抓包保存 Cookie
-    type: request
-    pattern: "^https://www\\.v2ex\\.com/(mission|member).*$"
-    require-body: false
-    timeout: 10
-    script-path: https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/v2ex.js
+scriptings:
+  - http_request:
+      name: V2EX 抓包保存 Cookie
+      match: "^https://www\\.v2ex\\.com/(mission|member)"
+      # 将 v2ex_egern.js 放到 Egern 的脚本目录后，改为本地路径，例如：
+      # script_url: /var/mobile/Library/Application Support/Egern/Scripts/v2ex_egern.js
+      script_url: v2ex_egern.js
+      body_required: false
+      timeout: 10
 
-  # 定时签到：每天 09:10 执行
-  - name: V2EX 每日签到
-    type: cron
-    cron: "10 9 * * *"
-    timeout: 60
-    script-path: https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/v2ex.js
+  - schedule:
+      name: V2EX 每日签到
+      cron: "10 9 * * *"
+      script_url: v2ex_egern.js
+      timeout: 60
