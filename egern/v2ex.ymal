@@ -13,12 +13,12 @@ scriptings:
       match: "^https://www\\.v2ex\\.com/(mission|member)"
       # 将 v2ex_egern.js 放到 Egern 的脚本目录后，改为本地路径，例如：
       # script_url: /var/mobile/Library/Application Support/Egern/Scripts/v2ex_egern.js
-      script_url: v2ex_egern.js
+      script_url: https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/v2ex.js
       body_required: false
       timeout: 10
 
   - schedule:
       name: V2EX 每日签到
       cron: "10 9 * * *"
-      script_url: v2ex_egern.js
+      script_url: https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/v2ex.js
       timeout: 60
