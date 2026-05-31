@@ -64,14 +64,6 @@ scriptings:
       body_required: true
       disabled: false
       
-  - http_request:
-      name: V2EX Cookie获取
-      match: '^https://www\.v2ex\.com/mission/daily'
-      script_url: "https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/v2ex_checkin.js"
-      timeout: 60
-      body_required: true
-      disabled: false
-      
 mitm:
   hostnames:
     includes:
@@ -84,4 +76,3 @@ mitm:
       - "m.bilibili.com"
       - "www.52pojie.cn"
       - "www.nodeseek.com"
-      - "www.v2ex.com"
