@@ -121,13 +121,24 @@ function saveHeaders() {
   }
 
   const ok = store.write(JSON.stringify(picked), NS_HEADER_KEY);
-  log(`saved picked headers: ${JSON.stringify(picked)}`);
+  const keys = Object.keys(picked).join(", ");
+  log(`saved picked header keys: ${keys}`);
   if (ok) {
-    notify("NS Headers 获取成功", "", "指定请求头已持久化保存。");
+    notify("NS Headers 获取成功", "", `已保存：${keys}`);
   } else {
     notify("NS Headers 保存失败", "", "写入持久化存储失败，请检查 Loon 配置。");
   }
   return finish({});
+}
+
+function safeBodyPreview(body) {
+  return String(body || "")
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 300);
 }
 
 function doCheckin() {
@@ -187,15 +198,24 @@ function doCheckin() {
       msg = obj && obj.message ? String(obj.message) : "";
       log(`parsed message: ${msg || "(empty)"}`);
     } catch (e) {
-      log(`JSON parse failed: ${e}`);
+      const preview = safeBodyPreview(body) || String(body || "").slice(0, 300);
+      log(`non-json response, status=${status}, preview=${preview}`);
+      msg = preview;
     }
 
     if (status === 403) {
       notify("NS签到结果", "403 风控", `暂时被风控，稍后再试\n${msg ? `内容：${msg}` : `响应体：${body}`}`);
+    } else if (status === 401 || status === 302) {
+      notify("NS签到结果", `${status} 登录失效`, msg || "返回登录/跳转页面，请重新获取 Headers。");
     } else if (status === 500) {
       notify("NS签到结果", "500 服务器错误", msg || body || "服务器错误(500)，无返回内容");
     } else if (status >= 200 && status < 300) {
-      notify("NS签到结果", "签到成功", msg || "NS签到成功，但未返回 message");
+      const looksLikeHtml = /^\s*</.test(String(body || ""));
+      if (looksLikeHtml) {
+        notify("NS签到结果", "返回HTML，疑似未登录/风控", msg || "请重新获取 Headers 后再试。");
+      } else {
+        notify("NS签到结果", "签到成功", msg || "NS签到成功，但未返回 message");
+      }
     } else {
       notify("NS签到结果", `请求异常 ${status}`, msg || body || `请求失败，status=${status}`);
     }
