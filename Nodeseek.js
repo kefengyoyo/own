@@ -1,57 +1,52 @@
-// 2026.4.8 | Loon 适配版
+// 2026.4.8 | Loon 适配版 v2
 
 /*
 @Name：NS论坛签到 (Loon版)
 @Author：怎么肥事 (Loon适配)
 
-1️⃣ 使用方法：打开 NodeSeek 点击个人头像进入信息页面，触发抓包获取请求头
+★ 核心改动：签到在 rewrite 上下文（用户访问个人页时）立即执行，
+  避免 Loon $httpClient 在 cron 里因 TLS 指纹与浏览器不同被 Cloudflare 拦截。
 
-──────────────────────────────────────
-📌 Loon 配置写法（粘贴到对应节）：
-──────────────────────────────────────
+──────────────────────────────────────────────────────
+📌 Loon 配置（粘贴到对应节）：
+──────────────────────────────────────────────────────
 
 [Script]
-# 抓取请求头（访问个人信息页时触发）
-http-request ^https:\/\/www\.nodeseek\.com\/api\/account\/getInfo\/\d+\?readme=1$ script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/Nodeseek_NsCheckin_Loon.js, requires-body=false, tag=NS获取Headers
+# ① 访问个人信息页时自动签到（主要方式）
+http-request ^https:\/\/www\.nodeseek\.com\/api\/account\/getInfo\/\d+\?readme=1$ script-path=本脚本URL, requires-body=false, tag=NS获取Headers并签到
 
-# 定时签到（每天 00:01 执行）
-cron "1 0 * * *" script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/Nodeseek_NsCheckin_Loon.js, tag=NS🍗签到, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/author/ZenMoFeiShi.png, enabled=true
+# ② 每天 00:01 兜底重试（应对未访问个人页的日子）
+cron "1 0 * * *" script-path=本脚本URL, tag=NS🍗签到兜底, img-url=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/author/ZenMoFeiShi.png, enabled=true
 
 [MITM]
 hostname = www.nodeseek.com
 
+──────────────────────────────────────────────────────
+📋 使用流程：
+  1. 配置好 MITM 后，在 NodeSeek 点击头像进入个人信息页
+  2. 脚本自动捕获请求头 + 立即发起签到
+  3. 之后每天打开个人页即可完成签到；若未打开则 cron 在 00:01 兜底
+──────────────────────────────────────────────────────
 */
 
 // ─── 常量 ───────────────────────────────────────────────────────────────────
 
-const NS_HEADER_KEY = "NS_NodeseekHeaders";
+const NS_HEADER_KEY    = "NS_NodeseekHeaders";
+const NS_CHECKIN_DATE  = "NS_LastCheckinDate";
 
-// 在 rewrite 脚本中 $request 存在，定时任务中不存在
 const isGetHeader = typeof $request !== "undefined";
 
 const NEED_KEYS = [
-  "Connection",
-  "Accept-Encoding",
-  "Priority",
-  "Content-Type",
-  "Origin",
-  "refract-sign",
-  "User-Agent",
-  "refract-key",
-  "Sec-Fetch-Mode",
-  "Cookie",
-  "Host",
-  "Referer",
-  "Accept-Language",
-  "Accept",
+  "Connection", "Accept-Encoding", "Priority", "Content-Type",
+  "Origin", "refract-sign", "User-Agent", "refract-key",
+  "Sec-Fetch-Mode", "Cookie", "Host", "Referer",
+  "Accept-Language", "Accept",
 ];
 
 // ─── 工具函数 ────────────────────────────────────────────────────────────────
 
-/**
- * 从请求头对象中提取需要的字段（大小写容错）
- */
-function pickNeedHeaders(src = {}) {
+function pickNeedHeaders(src) {
+  src = src || {};
   const dst = {};
   const get = (name) =>
     src[name] ?? src[name.toLowerCase()] ?? src[name.toUpperCase()];
@@ -62,42 +57,142 @@ function pickNeedHeaders(src = {}) {
   return dst;
 }
 
+function getTodayStr() {
+  const d = new Date();
+  return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+}
+
+function isCheckedInToday() {
+  return $persistentStore.read(NS_CHECKIN_DATE) === getTodayStr();
+}
+
+function markCheckedIn() {
+  $persistentStore.write(getTodayStr(), NS_CHECKIN_DATE);
+}
+
+// ─── 签到核心函数 ─────────────────────────────────────────────────────────────
+
+/**
+ * 使用保存的 headers 向 NodeSeek 发起签到请求
+ * @param {object}   savedHeaders  已保存的请求头对象
+ * @param {function} callback      (result: {success, title, message}) => void
+ */
+function doCheckIn(savedHeaders, callback) {
+  const url = "https://www.nodeseek.com/api/attendance?random=true";
+
+  // 只发送必要头，避免 Loon 与自动管理头产生冲突
+  const headers = {
+    "Content-Type":    savedHeaders["Content-Type"]    || "text/plain;charset=UTF-8",
+    "Origin":          savedHeaders["Origin"]          || "https://www.nodeseek.com",
+    "refract-sign":    savedHeaders["refract-sign"]    || "",
+    "User-Agent":      savedHeaders["User-Agent"]      ||
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7.2 Mobile/15E148 Safari/604.1",
+    "refract-key":     savedHeaders["refract-key"]     || "",
+    "Sec-Fetch-Mode":  savedHeaders["Sec-Fetch-Mode"]  || "cors",
+    "Cookie":          savedHeaders["Cookie"]          || "",
+    "Referer":         savedHeaders["Referer"]         || "https://www.nodeseek.com/sw.js?v=0.3.33",
+    "Accept-Language": savedHeaders["Accept-Language"] || "zh-CN,zh-Hans;q=0.9",
+    "Accept":          savedHeaders["Accept"]          || "*/*",
+    "Priority":        savedHeaders["Priority"]        || "u=3, i",
+  };
+
+  console.log("[NS签到] Cookie 前30字符: " + (headers["Cookie"] || "").slice(0, 30));
+  console.log("[NS签到] refract-sign 长度: " + (headers["refract-sign"] || "").length);
+
+  $httpClient.post({ url: url, headers: headers, body: "" }, function(error, response, data) {
+    if (error) {
+      const err = String(error || "");
+      console.log("[NS签到] 请求错误: " + err);
+      callback({ success: false, title: "请求错误", message: err });
+      return;
+    }
+
+    const status = response.status;
+    const body   = data || "";
+
+    console.log("[NS签到] HTTP 状态码: " + status);
+
+    // Cloudflare 拦截检测
+    if (body.indexOf("Just a moment") !== -1 || body.indexOf("challenges.cloudflare") !== -1) {
+      console.log("[NS签到] 遭遇 Cloudflare 拦截，Cookie 可能已过期，请重新访问个人页面");
+      callback({
+        success: false,
+        title: "Cloudflare 拦截",
+        message: "Cookie 与当前网络环境不匹配，请在 NodeSeek 重新访问个人页面刷新 Cookie。"
+      });
+      return;
+    }
+
+    let msg = "";
+    try {
+      const obj = JSON.parse(body);
+      msg = obj && obj.message ? String(obj.message) : "";
+      console.log("[NS签到] 返回 message: " + (msg || "(空)"));
+    } catch (e) {
+      console.log("[NS签到] JSON 解析失败: " + e);
+    }
+
+    if (status === 403) {
+      const content = "暂时被风控，稍后再试" + (msg ? "\n内容：" + msg : "\n响应：" + body.slice(0, 100));
+      callback({ success: false, title: "403 风控", message: content });
+    } else if (status === 500) {
+      callback({ success: false, title: "500 服务器错误", message: msg || body.slice(0, 100) || "服务器内部错误" });
+    } else if (status >= 200 && status < 300) {
+      markCheckedIn();
+      callback({ success: true, title: "签到成功 ✅", message: msg || "签到成功，未返回具体信息" });
+    } else {
+      callback({ success: false, title: "请求异常 " + status, message: msg || body.slice(0, 100) || "status=" + status });
+    }
+  });
+}
+
 // ─── 主逻辑 ──────────────────────────────────────────────────────────────────
 
 if (isGetHeader) {
-  // ── 模式1：rewrite 抓头，持久化保存 ────────────────────────────────────────
+  // ══ 模式1：rewrite 拦截（主要签到入口）══════════════════════════════════════
+  // 在用户主动浏览 NodeSeek 时触发，此上下文与浏览器同会话，
+  // Cloudflare TLS 指纹检测通过率更高
+
   const allHeaders = $request.headers || {};
   const picked = pickNeedHeaders(allHeaders);
 
   if (!picked || Object.keys(picked).length === 0) {
-    console.log("[NS] picked headers empty: " + JSON.stringify(allHeaders));
-    // Loon 通知 API：$notification.post(title, subtitle, body)
-    $notification.post("NS Headers 获取失败", "", "未获取到指定请求头，请重新再试一次。");
+    console.log("[NS] 未捕获到有效请求头: " + JSON.stringify(allHeaders));
+    $notification.post("NS Headers 获取失败", "", "未获取到指定请求头，请重新访问个人页面。");
     $done({});
-  } else {
-    // Loon 持久化存储 API：$persistentStore.write(value, key)
-    const ok = $persistentStore.write(JSON.stringify(picked), NS_HEADER_KEY);
-    console.log("[NS] saved picked headers: " + JSON.stringify(picked));
-    if (ok) {
-      $notification.post("NS Headers 获取成功", "", "指定请求头已持久化保存。");
-    } else {
-      $notification.post("NS Headers 保存失败", "", "写入持久化存储失败，请检查配置。");
-    }
-    $done({});
+    return;
   }
 
+  // 持久化保存请求头
+  const saved = $persistentStore.write(JSON.stringify(picked), NS_HEADER_KEY);
+  console.log("[NS] 请求头已保存，成功=" + saved);
+
+  // 今天已签到则只更新 Headers，不重复签到
+  if (isCheckedInToday()) {
+    $notification.post("NS Headers 已更新", "今日已签到 ✅", "无需重复签到。");
+    $done({});
+    return;
+  }
+
+  // 立即在 rewrite 上下文内签到（核心：避免 Cloudflare TLS 指纹问题）
+  doCheckIn(picked, function(result) {
+    $notification.post("NS签到结果", result.title, result.message);
+    $done({});
+  });
+
 } else {
-  // ── 模式2：定时任务，读取 Headers 后发起签到请求 ───────────────────────────
+  // ══ 模式2：cron 兜底任务 ═══════════════════════════════════════════════════
+  // 若当天已经通过 rewrite 签到，则直接跳过
 
-  // Loon 持久化读取 API：$persistentStore.read(key)
+  if (isCheckedInToday()) {
+    $notification.post("NS签到", "今日已签到 ✅", "已通过访问个人页完成，无需兜底。");
+    $done();
+    return;
+  }
+
   const raw = $persistentStore.read(NS_HEADER_KEY);
-
   if (!raw) {
-    $notification.post(
-      "NS签到结果",
-      "无法签到",
-      "本地没有已保存的请求头，请先访问一次个人页面进行抓包。"
-    );
+    $notification.post("NS签到结果", "无法签到", "本地没有已保存的请求头，请先访问个人页面一次。");
     $done();
     return;
   }
@@ -106,86 +201,13 @@ if (isGetHeader) {
   try {
     savedHeaders = JSON.parse(raw) || {};
   } catch (e) {
-    console.log("[NS] parse saved headers failed: " + e);
-    $notification.post(
-      "NS签到结果",
-      "无法签到",
-      "本地保存的请求头数据损坏，请重新访问一次个人页面。"
-    );
+    $notification.post("NS签到结果", "数据损坏", "请求头数据损坏，请重新访问个人页面。");
     $done();
     return;
   }
 
-  const url = "https://www.nodeseek.com/api/attendance?random=true";
-
-  const headers = {
-    Connection:        savedHeaders["Connection"]        || "keep-alive",
-    "Accept-Encoding": savedHeaders["Accept-Encoding"]  || "gzip, deflate, br",
-    Priority:          savedHeaders["Priority"]          || "u=3, i",
-    "Content-Type":    savedHeaders["Content-Type"]     || "text/plain;charset=UTF-8",
-    Origin:            savedHeaders["Origin"]            || "https://www.nodeseek.com",
-    "refract-sign":    savedHeaders["refract-sign"]     || "",
-    "User-Agent":      savedHeaders["User-Agent"]       ||
-      "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.7.2 Mobile/15E148 Safari/604.1",
-    "refract-key":     savedHeaders["refract-key"]      || "",
-    "Sec-Fetch-Mode":  savedHeaders["Sec-Fetch-Mode"]   || "cors",
-    Cookie:            savedHeaders["Cookie"]            || "",
-    Host:              savedHeaders["Host"]              || "www.nodeseek.com",
-    Referer:           savedHeaders["Referer"]           || "https://www.nodeseek.com/sw.js?v=0.3.33",
-    "Accept-Language": savedHeaders["Accept-Language"]  || "zh-CN,zh-Hans;q=0.9",
-    Accept:            savedHeaders["Accept"]            || "*/*",
-  };
-
-  // ── Loon HTTP 请求 API：$httpClient.post(options, callback) ─────────────
-  // callback 签名：(error, response, data)
-  // response.status 为状态码（QX 中为 resp.statusCode）
-  // data 为响应体字符串（QX 中为 resp.body）
-  $httpClient.post(
-    {
-      url: url,
-      headers: headers,
-      body: "",
-    },
-    (error, response, data) => {
-      if (error) {
-        const err = String(error || "");
-        console.log("[NS签到] request error: " + err);
-        $notification.post("NS签到结果", "请求错误", err);
-        $done();
-        return;
-      }
-
-      const status = response.status;   // Loon 用 response.status
-      const body   = data || "";
-
-      let msg = "";
-      try {
-        const obj = JSON.parse(body);
-        msg = obj?.message ? String(obj.message) : "";
-        console.log("[NS签到] parsed message: " + (msg || "(empty)"));
-      } catch (e) {
-        console.log("[NS签到] JSON parse failed: " + e);
-      }
-
-      if (status === 403) {
-        const content = "暂时被风控，稍后再试\n" + (msg ? "内容：" + msg : "响应体：" + body);
-        console.log("[NS签到] notify(403): " + content);
-        $notification.post("NS签到结果", "403 风控", content);
-      } else if (status === 500) {
-        const content = msg || body || "服务器错误(500)，无返回内容";
-        console.log("[NS签到] notify(500): " + content);
-        $notification.post("NS签到结果", "500 服务器错误", content);
-      } else if (status >= 200 && status < 300) {
-        const content = msg || "NS签到成功，但未返回 message";
-        console.log("[NS签到] notify(success): " + content);
-        $notification.post("NS签到结果", "签到成功 ✅", content);
-      } else {
-        const content = msg || body || "请求失败，status=" + status;
-        console.log("[NS签到] notify(other): " + content);
-        $notification.post("NS签到结果", "请求异常 " + status, content);
-      }
-
-      $done();
-    }
-  );
+  doCheckIn(savedHeaders, function(result) {
+    $notification.post("NS签到结果", result.title, result.message);
+    $done();
+  });
 }
