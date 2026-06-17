@@ -6,24 +6,10 @@
 #!arguments=签到执行时间:1 0 * * *,开启Cookie抓取:true,NodeSeek Cookie:xxx,TG Bot Token:xxx,TG User ID:xxx,仅失败时通知:false,随机奖励模式:false
 #!arguments-desc=签到执行时间: 默认每晚一点执行 (格式如 1 0 * * *)\n\n开启Cookie抓取\n- true: 打开后去 NodeSeek 个人中心可自动抓取 Cookie，抓到后请关闭\n- false: 关闭抓取\n\nNodeSeek Cookie: 抓取后会自动保存，若手动配置则在此填入完整 Cookie\n\nTG Bot Token: 选填，Telegram 机器人的 Token\n\nTG User ID: 选填，接收消息的 Telegram User ID\n\n仅失败时通知\n- false: 所有签到结果都发送\n- true: 仅在签到失败、风控、异常时才推送 TG\n\n随机奖励模式\n- false: 固定保底奖励\n- true: 随机抽奖模式
 
-# ══════════════════════════════════════════════════════
-# ⚠️  关于 Cloudflare 403 风控说明
-# ══════════════════════════════════════════════════════
-# Loon 的 $httpClient（Runtime: Loon Tunnel）TLS 指纹与
-# 浏览器不同，Cloudflare Bot Management 可能拦截签到请求。
-#
-# 解决方案：若 cron 任务被 403 拦截，改用如下两条规则：
-# ① http-request 抓取 Cookie（已包含在下方）
-# ② 另添加 http-response 规则向 NodeSeek 页面注入 fetch()
-#    由浏览器发起签到，彻底绕过 TLS 指纹检测。
-# ══════════════════════════════════════════════════════
-
 [Script]
-# ── ① Cookie 自动抓取（访问 NodeSeek 个人中心时触发）────────────────
 http-request ^https:\/\/www\.nodeseek\.com\/api\/account\/getInfo\/\d+\?readme=1$ script-path=https://raw.githubusercontent.com/Roddy-D/modules/refs/heads/main/nscheckin.js, requires-body=false, tag=NS签到获取Cookie, argument={"ENABLE_CAPTURE":{{{开启Cookie抓取}}}}
 
-# ── ② 定时签到（每日自动执行）──────────────────────────────────────
-cron "{{{签到执行时间}}}" script-path=https://raw.githubusercontent.com/Roddy-D/modules/refs/heads/main/nscheckin.js, tag=NS签到定时执行, argument={"NS_COOKIE":"{{{NodeSeek Cookie}}}","TG_BOT_TOKEN":"{{{TG Bot Token}}}","TG_USER_ID":"{{{TG User ID}}}","TG_NOTIFY_ONLY_FAIL":{{{仅失败时通知}}},"RANDOM_REWARD":{{{随机奖励模式}}}}
+cron "{{{签到执行时间}}}" script-path=https://raw.githubusercontent.com/Roddy-D/modules/refs/heads/main/nscheckin.js, tag=NS签到定时执行, enabled=true, argument={"NS_COOKIE":"{{{NodeSeek Cookie}}}","TG_BOT_TOKEN":"{{{TG Bot Token}}}","TG_USER_ID":"{{{TG User ID}}}","TG_NOTIFY_ONLY_FAIL":{{{仅失败时通知}}},"RANDOM_REWARD":{{{随机奖励模式}}}}
 
 [MITM]
 hostname = www.nodeseek.com
