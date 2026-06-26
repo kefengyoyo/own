@@ -113,6 +113,13 @@ const nameMap    = { cn:"cn", zh:"cn", us:"us", en:"us", quan:"quan", gq:"gq", f
 const inname     = nameMap[inArg.in]  || "";
 const outputName = nameMap[inArg.out] || "";
 
+// 地区重命名开关：检测到任意改名参数时才激活，否则跳过（不改动节点名）
+const RENAME_ENABLED =
+  inArg.in != null || inArg.out != null ||
+  nx || bl || nf || blgd || blpx || blnx || numone || clear || addflag || nm || key ||
+  FNAME !== "" || BLKEY !== "" || blockquic !== "" ||
+  inArg.fgf != null || inArg.sn != null || inArg.one != null;
+
 // 协议前缀参数
 const PROTO_ENABLED = String(inArg.proto) !== "off";
 const PROTO_ONLY    = inArg.only
@@ -447,8 +454,10 @@ function addProtoPrefix(proxies) {
 // Sub-Store 入口
 // ─────────────────────────────────────────────────────────────────────────────
 function operator(proxies, targetPlatform, context) {
-  // ① 地区重命名
-  proxies = keywosRename(proxies);
+  // ① 地区重命名（检测到 in/out/nm/flag/bl 等任意改名参数才执行，否则原名保留）
+  if (RENAME_ENABLED) {
+    proxies = keywosRename(proxies);
+  }
 
   // ② 协议类型前缀（proto=off 时跳过）
   if (PROTO_ENABLED) {
