@@ -63,6 +63,14 @@ scriptings:
       timeout: 60
       body_required: true
       disabled: false
+
+  - http_request:
+      name: WPS COOKIES
+      match: "^https:\/\/personal-act\.wps\.cn\/activity-rubik\/activity\/page_info"
+      script_url: "https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/wps/wps.cookie.js"
+      timeout: 60
+      body_required: true
+      disabled: false
       
 mitm:
   hostnames:
@@ -76,3 +84,4 @@ mitm:
       - "m.bilibili.com"
       - "www.52pojie.cn"
       - "www.nodeseek.com"
+      - "personal-act.wps.cn"
