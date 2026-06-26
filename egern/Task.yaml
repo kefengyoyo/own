@@ -74,3 +74,9 @@ scriptings:
       script_url: "https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/wps/wps.js"
       timeout: 120
       disabled: false
+
+  - schedule:
+      name: V2EX 每日签到
+      cron: "56 9 * * *"
+      script_url: https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/v2ex.js
+      timeout: 60
