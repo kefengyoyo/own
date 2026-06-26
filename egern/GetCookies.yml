@@ -47,7 +47,7 @@ scriptings:
 
   - http_request:
       name: 52破解获取Token
-      match: "^https:\/\/www\.52pojie\.cn\/home\.php\?"
+      match: "^https:\/\/www\\.52pojie\\.cn\/home\\.php\?"
       script_url: "https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js"
       timeout: 120
       body_required: true
