@@ -1,21 +1,10 @@
-# Misty
-DOMAIN-SUFFIX,misty.cx
 # 终点站
 DOMAIN-SUFFIX,emby.wtf
-# pornemby
-DOMAIN-SUFFIX,pornemby.com
-# Viper
-DOMAIN-SUFFIX,emby.agon.cf
-# 卡戎
-DOMAIN-SUFFIX,charontv.com
 # 纸片人
 DOMAIN-SUFFIX,embyplus.org
 #DOMAIN-SUFFIX,9521732.xyz
 # 流媒体放映厅服务器
 DOMAIN-SUFFIX,9191001.xyz
-# AWA影视
-DOMAIN-SUFFIX,awatv.de
-IP-CIDR,38.58.181.218/32
 # Nebula
 DOMAIN-SUFFIX,nebula-media.org
 # Hxd porn
@@ -43,16 +32,12 @@ DOMAIN-SUFFIX,xxxh.de
 IP-CIDR,157.180.0.157/32
 # paolu
 DOMAIN-SUFFIX,paoluma.de
-# yunti
-DOMAIN-SUFFIX,yunti.online
 # 肥牛
 DOMAIN-SUFFIX,feiniu.lol
 # 萝卜
 DOMAIN-SUFFIX,785858.xyz
 # ikun音乐
 DOMAIN-SUFFIX,diaojinping.de
-# zox free
-DOMAIN-SUFFIX,3767483.xyz
 # 骑兵
 DOMAIN-SUFFIX,emby.heisi.org
 DOMAIN,emby666.alien666.de5.net
@@ -67,9 +52,6 @@ DOMAIN-SUFFIX,emos.best
 DOMAIN-SUFFIX,yunti.online
 # playz
 DOMAIN,playz.mjji.de
-# 小竹轩
-DOMAIN,xxxxx.xxxxx.com
-DOMAIN,shouer.910427.xyz
 # haoai
 DOMAIN,emby.hohai.eu.org
 DOMAIN,emby-npo.hohai.eu.org
@@ -84,8 +66,6 @@ DOMAIN-SUFFIX,coemn.com
 DOMAIN-SUFFIX,embycc.link
 # 流媒体MJJ服务器
 DOMAIN-SUFFIX,mjjemby.org
-# 流媒体特卡服务器
-DOMAIN-SUFFIX,carlos.trade
 # 流媒体叔服服务器
 DOMAIN-SUFFIX,mcjoker.xyz
 DOMAIN,emby.shufu.club
@@ -129,8 +109,6 @@ DOMAIN-SUFFIX,emby.my
 # 二次元
 DOMAIN-SUFFIX,nijigem.by
 DOMAIN,cu.cdn.bgp.yt
-# 琉璃
-DOMAIN,emby.kongcheng666.dpdns.org
 #云云
 DOMAIN-SUFFIX,6666456.xyz
 #飞了个喵
@@ -153,8 +131,6 @@ DOMAIN-SUFFIX,liminalnet.com
 DOMAIN-SUFFIX,empn.mom
 # OK影视
 DOMAIN-SUFFIX,okemby.org
-# 享境
-DOMAIN-SUFFIX,luxrealm.online
 # 一支濑琴美
 DOMAIN,emby.ichinosekotomi.com
 # ROC
@@ -165,8 +141,6 @@ DOMAIN,nay.007.us.kg
 DOMAIN-SUFFIX,23333334.xyz
 DOMAIN,114514.fuckme.pushgoodcloud.com
 DOMAIN,genshen.mihoyo.bbroot.com
-# 音海拾贝
-DOMAIN,yinhai.aiinyue.com
 # 云海pron
 DOMAIN,nsfw.oceancloud.asia
 # HG-emby
@@ -190,10 +164,9 @@ DOMAIN,st.sakim.org
 DOMAIN,emby.fastcdn.dpdns.org
 # 这只猫
 DOMAIN,eb.zzm.li
-# 屿森
-DOMAIN,emby.yusen6.ccwu.cc
-DOMAIN,yusen.cyou
 # 猫猫emby
 DOMAIN,emby.avemujica.moe
 # 步兵营
 DOMAIN,bb.111848.xyz
+# 乐呵乐呵
+DOMAIN,emby.vincentjia.top
