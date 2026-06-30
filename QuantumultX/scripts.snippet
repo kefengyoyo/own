@@ -19,4 +19,7 @@ http-request ^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mv
 https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? url script-response-body https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/CamScanner2026.js
 # 滴答清单-解锁
 ^https:\/\/dida365\.com\/api\/v2\/user\/status url script-response-body https://raw.githubusercontent.com/afengye/QX/main/dida.js
-hostname = app.bilibili.com,www.v2ex.com,www.52pojie.cn,xmc.ximalaya.com,www.nodeseek.com,*.amap.com,gw2c-hw-open.longfor.com,dida365.com,ap*.intsig.net,dida365.com
+# WPS 签到
+^https:\/\/personal-act\.wps\.cn\/activity-rubik\/activity\/page_info url script-request-header https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/wps/wps.cookie.js
+
+hostname = app.bilibili.com,www.v2ex.com,www.52pojie.cn,xmc.ximalaya.com,www.nodeseek.com,*.amap.com,gw2c-hw-open.longfor.com,dida365.com,ap*.intsig.net,dida365.com,personal-act.wps.cn
