@@ -13,5 +13,8 @@ http-request ^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mv
 ^https:\/\/www\.nodeseek\.com\/api\/account\/getInfo\/\d+\?readme=1$ url script-request-header https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/Nodeseek_NsCheckin.js
 # 吾爱破解获取Cookie
 ^https:\/\/www\.52pojie\.cn\/home\.php\? url script-request-header https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js
-
-hostname = app.bilibili.com,www.v2ex.com,www.52pojie.cn,xmc.ximalaya.com,www.nodeseek.com,*.amap.com,gw2c-hw-open.longfor.com
+滴答清单-解锁高级会员
+^https:\/\/dida365\.com\/api\/v2\/user\/status url script-response-body https://raw.githubusercontent.com/afengye/QX/main/dida.js
+# CamScanner 解锁
+https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? url script-response-body https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/CamScanner2026.js
+hostname = app.bilibili.com,www.v2ex.com,www.52pojie.cn,xmc.ximalaya.com,www.nodeseek.com,*.amap.com,gw2c-hw-open.longfor.com,dida365.com,ap*.intsig.net
