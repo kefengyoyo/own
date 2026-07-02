@@ -1,3 +1,4 @@
+[rewrite_local]
 # bilibili获取cookies
 #^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? url script-response-body https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? url script-request-header https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js
@@ -21,5 +22,5 @@ https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? url script-r
 ^https:\/\/dida365\.com\/api\/v2\/user\/status url script-response-body https://raw.githubusercontent.com/afengye/QX/main/dida.js
 # WPS 签到
 ^https:\/\/personal-act\.wps\.cn\/activity-rubik\/activity\/page_info url script-request-header https://raw.githubusercontent.com/MaYIHEI/paperclip/refs/heads/main/app/wps/wps.cookie.js
-
+[mitm]
 hostname = app.bilibili.com,www.v2ex.com,www.52pojie.cn,xmc.ximalaya.com,www.nodeseek.com,*.amap.com,gw2c-hw-open.longfor.com,dida365.com,*.camscanner.com, *.intsig.net,dida365.com,personal-act.wps.cn
