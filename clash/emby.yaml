@@ -100,6 +100,7 @@ payload:
   - DOMAIN,emby.hohai.eu.org
   - DOMAIN,emby-npo.hohai.eu.org
   - DOMAIN,mini.jmsuper.com
+  - DOMAIN,mini.cr18.eu.org
   - DOMAIN-SUFFIX,6666456.xyz
   - DOMAIN-SUFFIX,nubebelle.cn
   - DOMAIN-SUFFIX,nangua.de
