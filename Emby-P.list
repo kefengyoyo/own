@@ -32,8 +32,6 @@ DOMAIN-SUFFIX,xxxh.de
 IP-CIDR,157.180.0.157/32
 # paolu
 DOMAIN-SUFFIX,paoluma.de
-# 肥牛
-DOMAIN-SUFFIX,feiniu.lol
 # 萝卜
 DOMAIN-SUFFIX,785858.xyz
 # ikun音乐
@@ -170,3 +168,6 @@ DOMAIN,eb.zzm.li
 DOMAIN,bb.111848.xyz
 # 乐呵乐呵
 DOMAIN,emby.vincent253.us.ci
+# embydada
+DOMAIN,chi.us.ci
+DOMAIN,ccdv.cc.cd
