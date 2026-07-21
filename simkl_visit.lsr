@@ -1,0 +1,15 @@
+#!name=Simkl Visit
+#!desc=捕获你本人在 simkl.com 的 Cookie，并定时模拟正常访问首页。仅用于自己的账号会话维护；请勿分享 Cookie。
+#!author=converted from sgmodule
+
+[MITM]
+hostname = %APPEND% simkl.com, passport.simkl.com
+
+[Script]
+# 1) Cookie 捕获：开启插件和 MitM 后，访问 https://simkl.com 即可保存 Cookie。
+# 同时监听 passport.simkl.com，因为 Simkl 的登录/注册实际发生在这个子域名，
+# 登录成功后的 Set-Cookie 也可能先出现在这里。
+http-request ^https:\/\/(simkl\.com|passport\.simkl\.com)\/ script-path=Scripts/simkl_visit.js, requires-body=false, timeout=10, tag=获取CK, enable=true
+
+# 2) 定时访问：默认 cron 表达式为每天 8 点(与原文件保持一致，注释中"每6小时"与该 cron 不符，可自行修改)。
+cron "0 8 * * *" script-path=Scripts/simkl_visit.js, timeout=500, tag=Simkl Scheduled Visit, enable=true
