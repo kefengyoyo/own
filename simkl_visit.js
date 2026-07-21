@@ -57,16 +57,15 @@ function saveCookieFromRequest() {
     return done({});
   }
 
-  // 403 很常见的原因：Cookie 里的 cf_clearance / 登录态和浏览器 UA 绑定。
-  // 所以捕获 Cookie 时同时保存原始浏览器 UA 和常见导航头，定时请求时一起复用。
+  // 只保存和"访问设备/语言"相关、跟来源上下文无关的头。
+  // Sec-Fetch-* 和 Referer 不保存：它们描述的是"这次请求是怎么跳转过来的"，
+  // 如果这次捕获恰好发生在跨站跳转（比如从 Google 登录跳回来）时，把这些头原样
+  // 存下来、之后又原样重放到首页请求上，跳转上下文对不上，容易被判定为异常流量。
+  // 定时任务重放时会改用固定的"直接访问首页"该有的值。
   const profile = {
     'User-Agent': getHeader(headers, 'User-Agent') || CONFIG.fallbackUserAgent,
     'Accept': getHeader(headers, 'Accept') || 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': getHeader(headers, 'Accept-Language') || 'zh-CN,zh-Hans;q=0.9,en;q=0.8',
-    'Sec-Fetch-Dest': getHeader(headers, 'Sec-Fetch-Dest') || 'document',
-    'Sec-Fetch-Mode': getHeader(headers, 'Sec-Fetch-Mode') || 'navigate',
-    'Sec-Fetch-Site': getHeader(headers, 'Sec-Fetch-Site') || 'none',
-    'Upgrade-Insecure-Requests': getHeader(headers, 'Upgrade-Insecure-Requests') || '1',
   };
 
   const oldCookie = $persistentStore.read(CONFIG.cookieKey) || '';

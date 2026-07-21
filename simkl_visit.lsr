@@ -3,13 +3,13 @@
 #!author=converted from sgmodule
 
 [MITM]
-hostname = %APPEND% simkl.com, passport.simkl.com
+hostname = %APPEND% simkl.com
 
 [Script]
-# 1) Cookie 捕获：开启插件和 MitM 后，访问 https://simkl.com 即可保存 Cookie。
-# 同时监听 passport.simkl.com，因为 Simkl 的登录/注册实际发生在这个子域名，
-# 登录成功后的 Set-Cookie 也可能先出现在这里。
-http-request ^https:\/\/(simkl\.com|passport\.simkl\.com)\/ script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/simkl_visit.js, requires-body=false, timeout=10, tag=获取CK, enable=true
+# 1) Cookie 捕获：只在直接访问 https://simkl.com/ 首页时触发，避免抓到从
+#    passport.simkl.com / Google 登录跳转过来的请求头（那些头带有 cross-site
+#    标记，原样重放到首页容易被 Cloudflare 判定为异常流量）。
+http-request ^https:\/\/simkl\.com\/$ script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/simkl_visit.js, requires-body=false, timeout=10, tag=获取CK, enable=true
 
 # 2) 定时访问：默认 cron 表达式为每天 8 点(与原文件保持一致，注释中"每6小时"与该 cron 不符，可自行修改)。
 cron "0 8 * * *" script-path=https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/simkl_visit.js, timeout=500, tag=Simkl Scheduled Visit, enable=true
