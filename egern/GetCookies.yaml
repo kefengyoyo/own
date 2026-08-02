@@ -77,7 +77,7 @@ scriptings:
       name: V2EX 抓包保存 Cookie
       match: "^https://www\\.v2ex\\.com/(mission|member)"
       script_url: https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/v2ex.js
-      body_required: false
+      body_required: true
       timeout: 10
       disabled: false
 
