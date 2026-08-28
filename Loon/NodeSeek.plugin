@@ -1,0 +1,17 @@
+#!name=NodeSeek 签到
+#!desc=NodeSeek Cookie 捕获 + 每日自动签到
+#!author=Nullwhy / Loon转换
+#!icon=https://raw.githubusercontent.com/Nullwhy/Egern/main/Icon/Nullwhy.png
+
+[Argument]
+MINUTE = input,00,tag=签到分钟
+HOUR = input,10,tag=签到小时
+FIXED_LEGS = select,false,true,tag=鸡腿
+ENABLE_CAPTURE = switch,false,tag=Cookie捕获
+
+[Script]
+response if ${url} ~= /^https:\/\/www\.nodeseek\.com\/api\/account\/getInfo\//i then script("https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/Loon/NodeSeek.js", {${ENABLE_CAPTURE}}) with tag="NodeSeek Cookie", timeout=30
+cron "${MINUTE} ${HOUR} * * *" then script("https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/Loon/NodeSeek.js", {${FIXED_LEGS}}) with tag="NodeSeek 签到", timeout=60
+
+[MITM]
+hostname = %APPEND% www.nodeseek.com
