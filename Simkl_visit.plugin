@@ -1,0 +1,14 @@
+#!name=Simkl Cookie + Visit
+#!desc=捕获本人 Simkl 登录 Cookie，并可定时访问。Cloudflare 403 不会覆盖已保存 Cookie。
+#!author=Kefeng / Loon 修复版
+
+[Argument]
+ENABLED = switch,true,tag=启用定时访问
+CRON = input,"0 8 * * *",tag=定时访问时间
+
+[Script]
+request if ${url} ~= /^https:\/\/simkl\.com(?:\/|$)/i && ${request.method} == "GET" then script("https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/simkl_visit.js") with tag="Simkl 获取Cookie", timeout=10
+cron ${CRON} then script("https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/simkl_visit.js") with enable=${ENABLED}, tag="Simkl 定时访问", timeout=30
+
+[MITM]
+hostname = %APPEND% simkl.com
