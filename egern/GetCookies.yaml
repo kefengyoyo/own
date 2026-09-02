@@ -30,22 +30,6 @@ scriptings:
       disabled: false
 
   - http_request:
-      name: Bilibili获取Token(APP)
-      match: "^https?://app\\.bilibili\\.com/x/resource/fingerprint\\?"
-      script_url: "https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js"
-      timeout: 60
-      body_required: true
-      disabled: false
-
-  - http_request:
-      name: Bilibili获取Token(网页)
-      match: "^https?://m\\.bilibili\\.com/$"
-      script_url: "https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js"
-      timeout: 60
-      body_required: true
-      disabled: false
-
-  - http_request:
       name: 52破解获取Token
       match: "^https://www\\.52pojie\\.cn/home\\.php\\?"
       script_url: "https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js"
@@ -88,8 +72,6 @@ mitm:
   - "*.amap.com"
   - "dache.amap.com"
   - "mobile.ximalaya.com"
-  - "app.bilibili.com"
-  - "m.bilibili.com"
   - "www.52pojie.cn"
   - "www.nodeseek.com"
   - "personal-act.wps.cn"
