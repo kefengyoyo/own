@@ -47,13 +47,6 @@ scriptings:
       disabled: false
 
   - schedule:
-      name: Bilibili
-      cron: "30 7 * * *"
-      script_url: "https://raw.githubusercontent.com/ClydeTime/BiliBili/refs/heads/main/js/BiliBiliDailyBonus.js"
-      timeout: 300
-      disabled: false
-
-  - schedule:
       name: 52破解签到
       cron: "0 9 * * *"
       script_url: "https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js"
