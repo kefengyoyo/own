@@ -147,5 +147,5 @@ payload:
   - DOMAIN,embya.yusen.cyou
   - DOMAIN,lite.cn2gias.uk
   - DOMAIN,emby.teawaya.com
-  - DOMAIN,yykx.top
+  - DOMAIN-SUFFIX,yykx.top
   - DOMAIN-SUFFIX,lily.lat
