@@ -30,7 +30,7 @@ open_url: "https://agentrouter.org"
 compat_arguments:
   AR_ACCOUNT: ""
   AR_CRON: "5 8 * * *"
-  AR_SCRIPT_URL: "AgentRouter4Egern.js"
+  AR_SCRIPT_URL: "https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/AgentRouter4Egern.js"
   AR_BASE_URL: "https://agentrouter.org"
   AR_POLICY: ""
   AR_TIMEOUT: "20"
