@@ -1,0 +1,95 @@
+# ================================================================
+# AgentRouter 自动签到 · Egern 模块
+# 版本：v3.0.0    日期：2026-09-11
+# 脚本：AgentRouter4Egern.js v3.0.0（原生 ctx 风格）
+#
+# 签到原理：AgentRouter 无独立签到接口，POST /api/user/login
+# 登录即触发每日签到（$25 Credit），无需退出重登。
+#
+# 参数机制（分工模式）：
+#   - 开关/选择类 → env_schema，模块设置界面生成 Toggle/Picker，值进 ctx.env
+#   - 文本/账号/时间类 → compat_arguments，「编辑模板参数」填写，
+#     {{{AR_XXX}}} 占位符替换进 scriptings[].env
+#
+# 配置示例：
+#   modules:
+#     - url: AgentRouter4Egern.module
+#       enabled: true
+#       compat_arguments:
+#         AR_ACCOUNT: "邮箱#密码"
+#         AR_CRON: "5 8 * * *"
+# ================================================================
+
+name: "AgentRouter 签到"
+description: "AgentRouter (agentrouter.org) 自动签到，登录即签到送 $25 额度，支持多账号、日志核验、结果通知"
+author: "𝗽𝗮𝗻𝗱𝗮𝕏"
+icon: "gift.fill"
+open_url: "https://agentrouter.org"
+
+# --- 文本/账号/时间类参数（「编辑模板参数」填写）---
+compat_arguments:
+  AR_ACCOUNT: ""
+  AR_CRON: "5 8 * * *"
+  AR_SCRIPT_URL: "AgentRouter4Egern.js"
+  AR_BASE_URL: "https://agentrouter.org"
+  AR_POLICY: ""
+  AR_TIMEOUT: "20"
+
+compat_arguments_desc: |
+  AR_ACCOUNT: [必填] 账号#密码
+      单账号：a@x.com#Passw0rd
+      多账号：a@x.com#pwd1|b@x.com#pwd2（竖线分隔）
+      带别名：主号@a@x.com#pwd1（@ 前缀为显示名）
+      ⚠️ 密码可含 #，但不能含双引号 "、反斜杠 \、&、| 和换行
+
+  AR_CRON: [定时] Cron 表达式（分 时 日 月 周）
+      默认 5 8 * * * = 每天 08:05
+      站点每日 07:00 / 19:00 分批发额度，错峰执行更稳
+
+  AR_SCRIPT_URL: [脚本地址] AgentRouter4Egern.js 的位置
+      默认为与模块同目录的本地脚本，也可填远程 https 地址
+
+  AR_BASE_URL: [站点] API 地址
+      https://agentrouter.org（默认）
+      https://ps.air-outer.com（大陆备用域名）
+
+  AR_POLICY: [代理] 策略或节点名称，留空按当前分流规则
+
+  AR_TIMEOUT: [超时] 单次请求超时秒数，默认 20
+
+# --- 开关/选择类参数（模块设置界面生成 Toggle/Picker，值进 ctx.env）---
+env_schema:
+  AR_VERIFY:
+    name: "核验签到日志"
+    description: "登录后再查 /api/log/self 确认签到记录"
+    default_value: "true"
+    options:
+      - "true"
+      - "false"
+  AR_NOTIFY:
+    name: "通知策略"
+    description: "always=每次 / change=仅成功或失败 / fail=仅失败"
+    default_value: "always"
+    options:
+      - "always"
+      - "change"
+      - "fail"
+  AR_SHOW_COOKIE:
+    name: "显示 Cookie"
+    description: "通知中显示 session Cookie，便于复用"
+    default_value: "false"
+    options:
+      - "true"
+      - "false"
+
+scriptings:
+  - schedule:
+      name: "AgentRouter 签到"
+      cron: "{{{AR_CRON}}}"
+      script_url: "{{{AR_SCRIPT_URL}}}"
+      timeout: 120
+      env:
+        AR_ACCOUNT: "{{{AR_ACCOUNT}}}"
+        AR_BASE_URL: "{{{AR_BASE_URL}}}"
+        AR_POLICY: "{{{AR_POLICY}}}"
+        AR_TIMEOUT: "{{{AR_TIMEOUT}}}"

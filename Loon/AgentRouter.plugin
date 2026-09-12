@@ -1,0 +1,35 @@
+#!name = AgentRouter 自动签到
+#!desc = 登录 AgentRouter 自动领取每日 $25 Credit；支持多账号、日志核验及结果通知
+#!author = 𝗽𝗮𝗻𝗱𝗮𝕏
+#!homepage = https://agentrouter.org
+#!system = iOS,iPadOS,tvOS,macOS
+#!loon_version = 3.5.1(978)
+#!tag = 签到,AgentRouter
+#!type = normal
+
+# 账号与密码使用空格分隔，多账号每行一个：
+#   a@x.com pwd#1|abc
+#   b@x.com another password #|abc
+# 别名：主号@a@x.com pwd#1|abc
+# 仅账号后的第一段空白用于分隔；密码可以包含 #、| 和后续空格。
+#
+# 代理策略：两条规则分别由「主站策略」「备用站策略」参数控制，
+# 可选 PROXY（在插件设置的「代理指向的策略」中选择策略组）或 DIRECT。
+
+[Argument]
+account = input,"",tag=账号,desc=必填：账号 空格 密码；多账号每行一个
+cron = input,"5 8 * * *",tag=执行时间,desc=Cron 表达式，默认每天 08:05
+baseUrl = input,"https://agentrouter.org",tag=服务地址,desc=也可使用 https://ps.air-outer.com
+requestTimeout = input,"20",tag=请求超时,desc=单个 HTTP 请求超时秒数
+scriptTimeout = input,"120",tag=脚本超时,desc=Loon 定时任务总超时秒数
+verify = switch,true,tag=核验签到日志,desc=登录后查询今日签到记录
+notify = select,"always","change","fail",tag=通知策略,desc=每次通知 / 仅变化或失败 / 仅失败
+showCookie = switch,false,tag=显示 Cookie,desc=在通知中显示 session Cookie（存在泄露风险）
+
+[Rule]
+# 两条规则分别由「主站策略」「备用站策略」参数控制
+DOMAIN-SUFFIX,agentrouter.org,PROXY
+DOMAIN-SUFFIX,air-outer.com,DIRECT
+
+[Script]
+cron {cron} script-path=AgentRouter.js,timeout={scriptTimeout},tag=AgentRouter 签到,argument=[{account},{baseUrl},{requestTimeout},{verify},{notify},{showCookie}]
