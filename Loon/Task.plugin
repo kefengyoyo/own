@@ -25,14 +25,14 @@ arg32 = switch,true,tag=Bilibili任务开关
 arg37 = input,"0 9 * * *",tag=吾爱破解任务时间
 arg38 = switch,true,tag=吾爱破解任务开关
 [Script]
-cron {arg5} script-path=https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js, timeout=300, enable= {arg6}, tag=龙湖天街
-cron {arg11} script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js, timeout=300, enable= {arg12}, tag=喜马拉雅
-cron {arg13} script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, timeout=120, enable= {arg14}, tag=高德打车
-cron {arg17} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/moyu.js, timeout=300, enable= {arg18}, tag=每日摸鱼
+cron ${arg5} then script("https://raw.githubusercontent.com/leiyiyan/resource/main/script/lhtj/lhtj.js") with enable=${arg6}, tag="龙湖天街", timeout=300
+cron ${arg11} then script("https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/Task/xmly.js") with enable=${arg12}, tag="喜马拉雅", timeout=300
+cron ${arg13} then script("https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js") with enable=${arg14}, tag="高德打车", timeout=120
+cron ${arg17} then script("https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/moyu.js") with enable=${arg18}, tag="每日摸鱼", timeout=300
 #cron {arg19} script-path=https://raw.githubusercontent.com/dompling/Script/master/gist/backup.js, timeout=300, enable= {arg20}, tag=boxjs备份
-cron {arg21} script-path=https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js, timeout=300, enable= {arg22}, tag=汇率监控
-cron {arg27} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js, timeout=300, enable={arg28}, tag=读懂世界
+cron ${arg21} then script("https://raw.githubusercontent.com/chxm1023/Task/main/hljk.js") with enable=${arg22}, tag="汇率监控", timeout=300
+cron ${arg27} then script("https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/60s.js") with enable=${arg28}, tag="读懂世界", timeout=300
 #cron {arg29} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,timeout=300, enable= {arg30}, tag=什么值得买
-cron {arg31} script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/refs/heads/main/js/BiliBiliDailyBonus.js,timeout=300, enable= {arg32}, tag=Bilibili
-cron {arg37} script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js,timeout=300, enable= {arg38}, tag=52破解签到
+cron ${arg31} then script("https://raw.githubusercontent.com/ClydeTime/BiliBili/refs/heads/main/js/BiliBiliDailyBonus.js") with enable=${arg32}, tag="Bilibili", timeout=300
+cron ${arg37} then script("https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/52pojie.js") with enable=${arg38}, tag="52破解签到", timeout=300
 [MITM]
