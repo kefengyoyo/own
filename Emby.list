@@ -16,6 +16,8 @@ DOMAIN,mi3.miraiemby.com
 DOMAIN,stream-1.miraiemby.com
 # 二楼
 DOMAIN,emby.huangmin.cc.cd
+DOMAIN,emby2.huangmin.cc.cd
+DOMAIN,2l.585820.xyz
 # AlphaTV
 IP-CIDR,43.139.184.65/24
 
