@@ -64,6 +64,7 @@ payload:
   - DOMAIN,18nsqx-my.sharepoint.com
   - DOMAIN,emusica.91bp.us.kg
   - DOMAIN,a.emby.my
+  - DOMAIN-SUFFIX,876645.xyz
   - DOMAIN-SUFFIX,alien666.me
   - DOMAIN-SUFFIX,nijigem.by
   - DOMAIN,default.cdn.bgp.yt
