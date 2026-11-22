@@ -965,7 +965,7 @@ export default async function (ctx) {
 
   async function measureLatencySet(urls, direct) {
     const results = await Promise.all(
-      urls.map(function (url) {
+      urls.slice(0, direct ? 4 : 3).map(function (url) {
         return latencyProbe(url, direct);
       })
     );
@@ -995,28 +995,58 @@ export default async function (ctx) {
     };
   }
 
-  async function latencyProbe(url, direct) {
+  async function latencyOnce(url, direct) {
+    const separator = url.includes("?") ? "&" : "?";
+    const target = url + separator + "_=" + Date.now() + randomAlphaNum(3);
     const startedAt = Date.now();
 
     try {
       const response = direct
-        ? await ctx.http.get(url, directRequestOptions())
-        : await ctx.http.get(url, requestOptions());
+        ? await ctx.http.get(target, directRequestOptions({ timeout: 3000 }))
+        : await ctx.http.get(target, requestOptions({ timeout: 3000 }));
 
       return {
         ok: response.status >= 200 && response.status < 400,
-        status: response.status,
-        ms: Math.max(1, Date.now() - startedAt),
-        url: url
+        ms: Math.max(1, Date.now() - startedAt)
       };
     } catch (_) {
       return {
         ok: false,
-        status: 0,
-        ms: Math.max(1, Date.now() - startedAt),
-        url: url
+        ms: Math.max(1, Date.now() - startedAt)
       };
     }
+  }
+
+  // 首次请求含 DNS / TCP / TLS 握手，会把延迟虚高 2~3 倍：
+  // 先预热 1 次（不计入），再顺序测 3 次取中位数
+  async function latencyProbe(url, direct) {
+    const warm = await latencyOnce(url, direct);
+
+    if (!warm.ok) {
+      return { ok: false, status: 0, ms: warm.ms, url: url };
+    }
+
+    const samples = [];
+
+    for (let index = 0; index < 3; index += 1) {
+      const result = await latencyOnce(url, direct);
+      if (result.ok) samples.push(result.ms);
+    }
+
+    if (samples.length === 0) {
+      return { ok: true, status: 200, ms: warm.ms, url: url };
+    }
+
+    samples.sort(function (a, b) {
+      return a - b;
+    });
+
+    return {
+      ok: true,
+      status: 200,
+      ms: samples[Math.floor((samples.length - 1) / 2)],
+      url: url
+    };
   }
 
   async function getProxyCheck(ip) {
@@ -3416,6 +3446,7 @@ function parseExitSource(data, sourceName) {
       getAt(data, "connection.isp"),
       getAt(data, "connection.org"),
       getAt(data, "asn.name"),
+      getAt(data, "asn.org"),
       data.isp,
       data.org,
       data.organization,
@@ -3433,6 +3464,9 @@ function parseExitSource(data, sourceName) {
     data.asname,
     getAt(data, "company.name"),
     getAt(data, "asn.name"),
+    getAt(data, "asn.org"),
+    getAt(data, "asn.descr"),
+    getAt(data, "datacenter.datacenter"),
     getAt(data, "connection.org"),
     getAt(data, "connection.isp")
   ].join(" ");
@@ -3561,6 +3595,7 @@ function parseExitSource(data, sourceName) {
     region: clean(
       pick(
         getAt(data, "location.region"),
+        getAt(data, "location.state"),
         data.regionName,
         data.region
       )
@@ -3789,7 +3824,7 @@ function mergeExitSources(sources) {
     region: bestField(sameIP, "region"),
     country: bestField(sameIP, "country"),
     countryCode: countryCode(bestField(sameIP, "countryCode")),
-    isp: cloud.name || bestField(sameIP, "isp") || "未知组织",
+    isp: cloud.name || bestISP(sameIP) || "未知组织",
     cloudProvider: cloud.name,
     kind: kind,
     flags: mergedFlags,
@@ -4734,24 +4769,91 @@ function gatewayLabel(value) {
   return gateway;
 }
 
-function shortISP(value) {
-  const isp = clean(value);
+const ISP_NAME_MAP = [
+  [/chinanet|china telecom|chinatelecom|ctgnet/i, "中国电信"],
+  [/china unicom|cncgroup|china169|chinaunicom/i, "中国联通"],
+  [/china mobile|cmnet|cmcc|\bcmi\b/i, "中国移动"],
+  [/china broadnet|\bcbn\b/i, "中国广电"],
+  [/cernet|china education/i, "中国教育网"],
+  [/hong kong telecommunications|\bhkt\b|pccw/i, "HKT/PCCW"],
+  [/hong kong broadband|hkbn/i, "HKBN"],
+  [/\bhgc\b|hutchison global/i, "HGC"],
+  [/smartone/i, "SmarTone"],
+  [/chunghwa|hinet/i, "中华电信"],
+  [/taiwan mobile/i, "台湾大哥大"],
+  [/far ?eastone/i, "远传电信"],
+  [/\bntt\b/i, "NTT"],
+  [/kddi/i, "KDDI"],
+  [/softbank/i, "SoftBank"],
+  [/\biij\b|internet initiative japan/i, "IIJ"],
+  [/singtel/i, "Singtel"],
+  [/starhub/i, "StarHub"],
+  [/korea telecom|\bkt corp/i, "KT"],
+  [/sk broadband|sk telecom/i, "SK"],
+  [/lg ?u\+|lg uplus|lg dacom/i, "LG U+"],
+  [/comcast|xfinity/i, "Comcast"],
+  [/\bat&t\b|\batt services/i, "AT&T"],
+  [/verizon/i, "Verizon"],
+  [/charter comm|spectrum/i, "Spectrum"],
+  [/t-mobile/i, "T-Mobile"],
+  [/cox comm/i, "Cox"],
+  [/cloudflare/i, "Cloudflare"]
+];
 
-  if (!isp || isp === "未知组织") {
+// 统一 ISP 名称：去掉 ASN 前缀 / 公司后缀，常见运营商映射为短名
+function prettyISP(value) {
+  let name = clean(value).replace(/^AS\d+\s*[-:]?\s*/i, "");
+
+  if (!name || name === "未知组织") return "";
+
+  for (let index = 0; index < ISP_NAME_MAP.length; index += 1) {
+    if (ISP_NAME_MAP[index][0].test(name)) {
+      return ISP_NAME_MAP[index][1];
+    }
+  }
+
+  name = name
+    .replace(/[,.]?\s*\b(co\.?\s*,?\s*ltd\.?|ltd\.?|limited|inc\.?|llc|l\.l\.c\.|corp\.?|corporation|company|gmbh|s\.a\.|b\.v\.|pte\.?|plc)(?=\s|,|\.|$)/gi, "")
+    .replace(/[\s,.\-]+$/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return name;
+}
+
+// 多个数据源按统一名称投票，避免 "AS15169 Google LLC" / "Google LLC" 互相不一致
+function bestISP(items) {
+  const values = (items || [])
+    .map(function (item) {
+      return prettyISP(item.isp);
+    })
+    .filter(Boolean);
+
+  return mostCommon(values) || values[0] || "";
+}
+
+function shortISP(value) {
+  const raw = clean(value);
+
+  if (!raw || raw === "未知组织") {
     return "未知";
   }
 
-  if (isp.length <= 12) {
-    return isp;
+  const name = prettyISP(raw) || raw;
+
+  if (name.length <= 12) {
+    return name;
   }
 
-  const words = isp.split(/\s+/);
+  const words = name.split(/\s+/);
 
   if (words.length > 1) {
-    return words[0];
+    const two = words.slice(0, 2).join(" ");
+    if (two.length <= 14) return two;
+    return words[0].length <= 14 ? words[0] : words[0].slice(0, 11) + "…";
   }
 
-  return isp.slice(0, 11) + "…";
+  return name.slice(0, 11) + "…";
 }
 
 function randomAlphaNum(length) {
