@@ -1,0 +1,46 @@
+# Source: https://raw.githubusercontent.com/lylywayr/NetWork-Module/main/Egern/%E7%BD%91%E7%BB%9C%E8%AF%8A%E6%96%AD%E9%9B%B7%E8%BE%BE/%E7%BD%91%E7%BB%9C%E8%AF%8A%E6%96%AD%E9%9B%B7%E8%BE%BE.js
+# Author: lylywayr | License: 未声明许可证
+# Egern adaptation: ErrBin
+name: Egern「网络诊断雷达」（透明版）
+scriptings:
+- generic:
+    name: wangluozhenduanleida
+    # ⚠️ 把下面的地址换成你托管优化版 internetwork.js 的地址（原地址的脚本不含本次修复）
+    script_url: https://raw.githubusercontent.com/kefengyoyo/own/refs/heads/main/egern/internetwork.js
+widgets:
+- name: 网络诊断雷达（透明版）
+  script_name: wangluozhenduanleida
+env_schema:
+  POLICY:
+    name: POLICY（统一策略组）
+    description: 最高优先级。填写后，出口、延迟、UDP/QUIC、流媒体、AI 全部走该策略。留空则自动匹配
+  LMT:
+    name: LMT（流媒体策略组）
+    description: 流媒体检测使用的策略组名。POLICY 为空时生效；留空则自动匹配（结果缓存 6 小时）
+  AI:
+    name: AI（AI 策略组）
+    description: AI 检测使用的策略组名。POLICY 为空时生效；留空则自动匹配（结果缓存 6 小时）
+  XY:
+    name: XY（手动指定协议）
+    description: 例如 VLESS / Trojan / HY2 / AnyTLS。留空则尝试从节点信息自动识别
+  YS:
+    name: YS（IP 隐私打码）
+    description: 1 = 本地 IP / 网关打码（123.123.*.*）；0 = 不打码
+    options: ["0", "1"]
+    default_value: '0'
+  LOCAL:
+    name: LOCAL（本地出口地区）
+    description: mainland 固定显示中国大陆（默认）；auto 按直连出口实际定位（人在境外时选 auto）
+    options: ["mainland", "auto"]
+    default_value: 'mainland'
+  REFRESH:
+    name: REFRESH（刷新间隔，分钟）
+    description: 默认 15，范围 5-240。过短可能触发 ip-api / proxycheck.io 的免费额度限制
+    default_value: '15'
+  WIDGET_STYLE:
+    name: 样式（glass 透明 / classic 原版）
+    description: glass 透明（默认，根容器不设背景，卡片/磁贴半透明）；classic 原版纯色背景
+    options: ["glass", "classic"]
+    default_value: 'glass'
+author: 'lylywayr · Egern adaptation: ErrBin'
+description: 配置 1 个小组件，通过通用脚本生成界面。透明版：默认 glass，壁纸透出来。
