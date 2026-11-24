@@ -19,7 +19,7 @@ payload:
   - DOMAIN-SUFFIX,nebula-media.org
   - DOMAIN-SUFFIX,biliblili.uk
   - DOMAIN-SUFFIX,mobaiemby.site
-  - DOMAIN,embymv.link
+  - DOMAIN-SUFFIX,embymv.cc
   - DOMAIN-SUFFIX,lyrebirdemby.com
   - DOMAIN-SUFFIX,younoyes.com
   - DOMAIN-SUFFIX,010004.xyz
@@ -72,7 +72,6 @@ payload:
   - DOMAIN,emby1.123456789.lol
   - DOMAIN,cf.5msky.com
   - DOMAIN,lite.saturdayent.top
-  - DOMAIN,embymv.link
   - DOMAIN,emby.younoyes.com
   - DOMAIN,rjcf.rjf37.com
   - DOMAIN,play.charontv.com
