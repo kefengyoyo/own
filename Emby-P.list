@@ -31,7 +31,7 @@ DOMAIN-SUFFIX,mobaiemby.site
 # saturday
 DOMAIN,lite.saturdayent.top
 # 流媒体peach服务器
-DOMAIN-SUFFIX,embymv.link
+DOMAIN-SUFFIX,embymv.cc
 IP-CIDR,193.123.232.141/32
 # lyrebird
 DOMAIN-SUFFIX,lyrebirdemby.com
@@ -116,7 +116,7 @@ DOMAIN,18nsqx-my.sharepoint.com
 # 鹅音乐
 DOMAIN,emusica.91bp.us.kg
 # 月饼
-DOMAIN-SUFFIX,emby.my
+DOMAIN,emby.my
 DOMAIN-SUFFIX,876645.xyz
 DOMAIN-KEYWORD,speedtest-babybus
 # 二次元
@@ -177,7 +177,9 @@ DOMAIN,st.sttss.de
 # catemby
 DOMAIN,emby.fastcdn.dpdns.org
 # 这只猫
-DOMAIN,eb.zzm.li
+DOMAIN-SUFFIX,zzm.li
+DOMAIN-SUFFIX,ftp2.eu.org
+DOMAIN-SUFFIX,covh.eu.org
 # 步兵营
 DOMAIN,emby.111449.xyz
 # embydada
@@ -205,3 +207,5 @@ DOMAIN,ltx.niubi.us.kg
 DOMAIN-SUFFIX,r2.cloudflarestorage.com
 # 合欢片库
 DOMAIN,hehuan.riroro.com
+# 9527
+DOMAIN,fmao.eu.org

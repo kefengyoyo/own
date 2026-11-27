@@ -20,7 +20,7 @@ payload:
   - DOMAIN-SUFFIX,nebula-media.org
   - DOMAIN-SUFFIX,biliblili.uk
   - DOMAIN-SUFFIX,mobaiemby.site
-  - DOMAIN,embymv.link
+  - DOMAIN-SUFFIX,embymv.cc
   - DOMAIN-SUFFIX,lyrebirdemby.com
   - DOMAIN-SUFFIX,younoyes.com
   - DOMAIN-SUFFIX,010004.xyz
@@ -34,7 +34,6 @@ payload:
   - DOMAIN-SUFFIX,staryuki.me
   - DOMAIN-SUFFIX,pilipili.club
   - DOMAIN-SUFFIX,pilipiliultra.com
-  - DOMAIN-SUFFIX,poloco.org
   - DOMAIN-SUFFIX,coemn.com
   - DOMAIN-SUFFIX,embycc.link
   - DOMAIN-SUFFIX,mjjemby.org
@@ -63,7 +62,7 @@ payload:
   - DOMAIN-SUFFIX,wenjian.de
   - DOMAIN,18nsqx-my.sharepoint.com
   - DOMAIN,emusica.91bp.us.kg
-  - DOMAIN,a.emby.my
+  - DOMAIN,emby.my
   - DOMAIN-SUFFIX,876645.xyz
   - DOMAIN-SUFFIX,alien666.me
   - DOMAIN-SUFFIX,nijigem.by
@@ -128,7 +127,9 @@ payload:
   - DOMAIN,stjps.sttss.de
   - DOMAIN,st.sttss.de
   - DOMAIN,emby.fastcdn.dpdns.org
-  - DOMAIN,eb.zzm.li
+  - DOMAIN-SUFFIX,zzm.li
+  - DOMAIN-SUFFIX,ftp2.eu.org
+  - DOMAIN-SUFFIX,covh.eu.org
   - DOMAIN,emby.yusen6.ccwu.cc
   - DOMAIN,yusen.cyou
   - DOMAIN,emby.111449.xyz
@@ -148,3 +149,4 @@ payload:
   - DOMAIN-SUFFIX,niubi.us.kg
   - DOMAIN-SUFFIX,r2.cloudflarestorage.com
   - DOMAIN,hehuan.riroro.com
+  - DOMAIN,fmao.eu.org
