@@ -1,3 +1,13 @@
+# NAME: Emby
+# AUTHOR: KEFENG
+# UPDATED: 2026-11-28 05:55:10
+# DOMAIN: 10
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 3
+# PROCESS-NAME: 0
+# IP-CIDR: 1
+# TOTAL: 14
+
 # MICU
 DOMAIN-SUFFIX,micu.hk
 # saodu
@@ -19,5 +29,4 @@ DOMAIN,emby.huangmin.cc.cd
 DOMAIN,emby2.huangmin.cc.cd
 DOMAIN,2l.585820.xyz
 # AlphaTV
-IP-CIDR,43.139.184.65/24
-
+IP-CIDR,43.139.184.65/32,no-resolve

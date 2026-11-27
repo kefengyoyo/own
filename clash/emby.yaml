@@ -1,12 +1,13 @@
 # NAME: Emby
-# AUTHOR: justdoiting
+# AUTHOR: KEFENG
+# UPDATED: 2026-11-28 05:55:10
+# DOMAIN: 67
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 72
+# PROCESS-NAME: 0
+# IP-CIDR: 0
+# TOTAL: 139
 # REPO: https://github.com/justdoiting/emby-rules
-# UPDATED: 2025-07-31 09:18:50
-# DOMAIN: 3
-# DOMAIN-KEYWORD: 3
-# DOMAIN-SUFFIX: 45
-# PROCESS-NAME: 1
-# TOTAL: 80
 payload:
   - DOMAIN-SUFFIX,misty.cx
   - DOMAIN-SUFFIX,emby.wtf
@@ -72,7 +73,6 @@ payload:
   - DOMAIN,emby1.123456789.lol
   - DOMAIN,cf.5msky.com
   - DOMAIN,lite.saturdayent.top
-  - DOMAIN,embymv.link
   - DOMAIN,emby.younoyes.com
   - DOMAIN,rjcf.rjf37.com
   - DOMAIN,play.charontv.com
@@ -92,11 +92,9 @@ payload:
   - DOMAIN-SUFFIX,staryuki.com
   - DOMAIN-SUFFIX,chilledmelon.com
   - DOMAIN-SUFFIX,meowfly.de
-  - DOMAIN,cf.bili.rip
   - DOMAIN-SUFFIX,as174.de
   - DOMAIN-SUFFIX,hxdemby.com
   - DOMAIN,playz.mjji.de
-  - DOMAIN,xxxxx.xxxxx.com
   - DOMAIN,shouer.910427.xyz
   - DOMAIN,emby.hohai.eu.org
   - DOMAIN,emby-npo.hohai.eu.org
@@ -120,14 +118,12 @@ payload:
   - DOMAIN,genshen.mihoyo.bbroot.com
   - DOMAIN,yinhai.aiinyue.com
   - DOMAIN,nsfw.oceancloud.asia
-  - DOMAIN-SUFFIX,biliblili.uk
   - DOMAIN,emby.ichinosekotomi.com
   - DOMAIN,hgemby.qzz.io
   - DOMAIN,faemby.vip
   - DOMAIN,mi.miraiemby.com
   - DOMAIN,wp.lyezi.cc
   - DOMAIN,my.microsoftpersonalcontent.com
-  - DOMAIN,emby-npo.hohai.eu.org
   - DOMAIN,emby.vincent253.us.ci
   - DOMAIN,stjps.sttss.de
   - DOMAIN,st.sttss.de
@@ -136,7 +132,6 @@ payload:
   - DOMAIN,emby.yusen6.ccwu.cc
   - DOMAIN,yusen.cyou
   - DOMAIN,emby.111449.xyz
-  - DOMAIN,emby.vincent253.us.ci
   - DOMAIN,chi.us.ci
   - DOMAIN,ccdv.cc.cd
   - DOMAIN,cflocal.xxlb.net
@@ -146,7 +141,6 @@ payload:
   - DOMAIN,aaa.yusen6.ccwu.cc
   - DOMAIN,emby.yusen.us.ci
   - DOMAIN,embya.yusen.cyou
-  - DOMAIN,lite.cn2gias.uk
   - DOMAIN,emby.teawaya.com
   - DOMAIN-SUFFIX,yykx.top
   - DOMAIN-SUFFIX,lily.lat

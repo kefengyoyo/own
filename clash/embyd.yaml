@@ -1,12 +1,12 @@
 # NAME: Emby-D
 # AUTHOR: KEFENG
-# REPO: nil
-# UPDATED: 2025-07-31 09:18:50
-# DOMAIN: 3
-# DOMAIN-KEYWORD: 3
-# DOMAIN-SUFFIX: 45
-# PROCESS-NAME: 1
-# TOTAL: 80
+# UPDATED: 2026-11-28 05:55:10
+# DOMAIN: 8
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 4
+# PROCESS-NAME: 0
+# IP-CIDR: 2
+# TOTAL: 14
 payload:
   - DOMAIN-SUFFIX,micu.hk
   - DOMAIN-SUFFIX,saodu.asia
@@ -19,7 +19,8 @@ payload:
   - DOMAIN,mi2.miraiemby.com
   - DOMAIN,mi3.miraiemby.com
   - DOMAIN,stream-1.miraiemby.com
-  - DOMAIN,gy.emby.yun
+# 已停用：.yun 不是有效顶级域，规则永不匹配（2026-11-28 校订）
+#   DOMAIN,gy.emby.yun
   - DOMAIN,emby.huangmin.cc.cd
   - DOMAIN,emby2.huangmin.cc.cd
   - DOMAIN,2l.585820.xyz
