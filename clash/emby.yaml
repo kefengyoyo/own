@@ -130,7 +130,9 @@ payload:
   - DOMAIN,stjps.sttss.de
   - DOMAIN,st.sttss.de
   - DOMAIN,emby.fastcdn.dpdns.org
-  - DOMAIN,eb.zzm.li
+  - DOMAIN-SUFFIX,zzm.li
+  - DOMAIN-SUFFIX,ftp2.eu.org
+  - DOMAIN-SUFFIX,covh.eu.org
   - DOMAIN,emby.yusen6.ccwu.cc
   - DOMAIN,yusen.cyou
   - DOMAIN,emby.111449.xyz
