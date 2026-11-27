@@ -163,7 +163,9 @@ DOMAIN,st.sttss.de
 # catemby
 DOMAIN,emby.fastcdn.dpdns.org
 # 这只猫
-DOMAIN,eb.zzm.li
+DOMAIN,*.zzm.li
+DOMAIN,*.ftp2.eu.org
+DOMAIN,*.covh.eu.org
 # 步兵营
 DOMAIN,emby.111449.xyz
 # 乐呵乐呵
